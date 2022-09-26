@@ -22,6 +22,34 @@ print(prom_gral)
 #######################################################
 
 
+# dif#erencia entre record y list
+
+# record es un array de numpy
+
+# list es una lista de python
+
+#¿Qué es un array de numpy?
+
+#Un array de numpy es una estructura de datos que permite almacenar datos de un mismo tipo.
+
+# ¿Cómo se usa un array de numpy?
+
+# Para crear un array de numpy se usa la función array() de numpy.
+
+# ¿Cómo se usa la función array() de numpy?
+# La función array() de numpy recibe como parámetro una lista de python y devuelve un array de numpy.
+# ejemplo de array de numpy
+
+import numpy as np
+
+lista = [1, 2, 3, 4, 5]
+
+array = np.array(lista)
+
+print(array)
+
+
+
 
 
 

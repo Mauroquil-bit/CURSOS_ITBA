@@ -24,9 +24,4 @@ def copiar_archivo(nombre):
 
 print(copiar_archivo("Tabla1.xlsx"))
 
-# El archivo no existe
-# Tabla1.xlsx
-
-# El archivo ya existe
-# Copia 1 - Tabla1.xlsx
 

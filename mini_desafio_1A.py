@@ -67,7 +67,13 @@ print("Diferencias de gol:")
 for i in range(len(data["Equipo"])):
     print(data["Equipo"][i], ":", int(data["Goles a favor"][i] - data["Goles en contra"][i]))
 
-print(archivo)
+#print(archivo)
+
+# ¿Cómo se usa la función to_dict() de pandas?
+
+# La función to_dict() de pandas recibe como parámetro un string que puede ser "list" o "dict".
+
+
 
 
 
