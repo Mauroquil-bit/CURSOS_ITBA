@@ -1,0 +1,13 @@
+Clase 2: Visualización de datos
+En la clase anterior vimos diferentes formas escribir, leer e interactuar con información de distintas bases de datos. En muchos casos estos resultados deben ser entendidos por una persona para lograr una correcta interpretación de su significado, por lo cual es importante encontrar la forma más efectiva de visualizarlos.
+
+En esta segunda clase del curso de Análisis de Datos, comenzaremos a visualizar información de manera gráfica. Al momento de mostrar resultados, es útil tener en mente qué característica de los datos se desea resaltar. No se trata de crear un collage de datos sino de transmitir una idea o un resultado de forma visual para que sea fácilmente interpretable.
+
+Algunas liberías de visualización son:
+
+Matplotlib
+Seaborn
+Plotly
+Pueden leer sobre ellas aqui.
+
+Nos focalizaremos en el uso de maplotlib ya que es la libería más popular (el uso de otras liberías es similar). Además, esta se ve potenciada mediante el uso conjunto de otra librería llamada numpy.
