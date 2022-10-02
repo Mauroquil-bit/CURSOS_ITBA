@@ -31,3 +31,9 @@ Luego np.sin() calcula el seno, nuevamente, elemento a elemento.
 """
 ###########################################################################
 
+
+
+
+
+
+
