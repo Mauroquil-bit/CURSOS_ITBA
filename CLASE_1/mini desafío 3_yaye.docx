@@ -1,0 +1,15 @@
+"""
+MINIDESAFÍO 3 - CLASE 1
+"""
+
+import pandas as pd
+datos = pd.read_excel("Datos.xlsx")
+
+def promedio_alumno(datos,materia):
+   filtrar_alumno = datos[datos[["Matematica"]>=6]
+   promedio = (filtrar_alumno["Matematica"] + filtrar_alumno["Quimica"] + filtrar_alumno["Fisica"]) / 3
+   return promedio
+
+llamar = promedio_alumno(datos,())
+print(llamar)
+

@@ -14,11 +14,6 @@ plt.plot(x2, y2, 'r-.', label='Estimación')
 plt.legend()
 plt.show()
 
-# Resultado:
-
-#
-# Ejemplo 3:
-
 
 ########################################################
 

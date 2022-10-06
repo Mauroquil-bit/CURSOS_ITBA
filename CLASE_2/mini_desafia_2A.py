@@ -11,7 +11,7 @@ import datetime as dt
 import numpy as np
 
 
-archivo = pd.read_csv("https://raw.githubusercontent.com/IEEESBITBA/Curso-Python/master/Curso_Analisis_de_Datos_Datos/BTC.csv")
+archivo = pd.read_csv("GOOGLE.csv")
 fechas = []
 cotizaciones = []
 hoy = dt.datetime.today().date()
