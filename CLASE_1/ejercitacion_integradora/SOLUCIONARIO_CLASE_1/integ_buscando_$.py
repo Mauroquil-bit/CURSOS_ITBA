@@ -19,7 +19,7 @@ Nota final: ¡Busquen en el mapa estas coordenadas para ver donde quedan!
 import pandas as pd
 import numpy as np
 
-archivo = pd.read_excel("california_housing_train.xlsx") 
+archivo = pd.read_excel("CLASE_1\ejercitacion_integradora\california_housing_train.xlsx") 
 paso = .5
 
 lats = np.arange(32.5,42.5,paso)

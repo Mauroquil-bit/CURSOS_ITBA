@@ -25,3 +25,6 @@ plt.xticks([f'{y}-01-01' for y in range(2015, 2020)]) # Mostrar el primer día d
 plt.grid( axis='y' )   # Mostrar una grilla horizontal
 plt.legend()           # Mostrar labels
 plt.show()
+
+###################################################################
+

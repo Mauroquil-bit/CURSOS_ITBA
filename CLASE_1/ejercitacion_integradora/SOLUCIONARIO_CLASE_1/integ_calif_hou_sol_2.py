@@ -2,7 +2,7 @@
 
 import pandas as pd
 
-viviendas = pd.read_excel("california_housing_train.xlsx") 
+viviendas = pd.read_excel("CLASE_1\ejercitacion_integradora\california_housing_train.xlsx") 
 
 #Pregunta 1 y 2 (utilizando filtrado)
 filtro_lon = (-120 <= viviendas['longitude']) & (viviendas['longitude'] <= -118)

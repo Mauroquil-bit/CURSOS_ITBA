@@ -1,0 +1,1211 @@
+Delivered-To: ayelenrivero3389@gmail.com
+Received: by 2002:a05:7300:4345:b0:7f:60c4:edc1 with SMTP id w5csp841536dye;
+        Fri, 7 Oct 2022 21:21:12 -0700 (PDT)
+X-Received: by 2002:a67:e3d3:0:b0:3a6:b6af:26d1 with SMTP id k19-20020a67e3d3000000b003a6b6af26d1mr4590858vsm.70.1665202872677;
+        Fri, 07 Oct 2022 21:21:12 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1665202872; cv=none;
+        d=google.com; s=arc-20160816;
+        b=nOxgI8y93KSP8WrnnBg21npf80kpD2v0RMeJAUGe+pmRywpdv8BhF62OEXn/+d/ROg
+         bC8CjRltPvsWdwIgHq2uKegm5gEQL8XrouLpJxRazEC24b9OT1pneAmRvkdLt/5Mq5CY
+         24f3InDc6ClACqm3AZ/cUrpm7FE1hI3yrBb7cEQEefhx1L/+enQkYAfi5Uxo4jwS3S4c
+         LzCKrCUGoX0FrVcJa0Mw2I4U7AapXOZeF7bUw0O4J5tlAJrzTf0egBsVLFtnpvuAYSii
+         vKQEgO6ZsXTpzzvr0HGF8xwPRC7KHpDYax8cbjOy1AmrpN0+qwaCQY93HoPB0S2Luh8K
+         qlUw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=to:from:subject:date:message-id:feedback-id:mime-version
+         :dkim-signature;
+        bh=859xkgMXVXO3Ue/AcIf7PSvbS8gFvJsitJGmAbZQMbQ=;
+        b=dnvhlLqVY1IlghtKoHX3FddPS7lYaFUy1IMEu4rYocNArntOahuf2piCZBrL6QO9TF
+         WewN4bk1mqbFXiEtsMAkJBPJtMNjpaOyEo6OFcU/FslK0jRZLjnLL6u9tyBFx0f5/HXv
+         yQcGW7Y1d0/lhI3JwDqdZ+8HteXVgeqlX/0hhrNQEwBD1iAvbDvxTj6xaJDt74LMkVK7
+         78XXSeyLgOxnlYuy9ajt+DLq0gyHDGOFXRUqV0IqdUki0g7WPHrT4znz6lQkmpXQXkmJ
+         Wc59i/PACfWSBD5p7dOc2ItyG6avmnaL9BFgtLxmlyFdZpc9NkzaxLei8tzTGYgP+VeK
+         6wNg==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@google.com header.s=20210112 header.b="OzK9GUS/";
+       spf=pass (google.com: domain of 3t_payxykana1ad8e-d0y04bfe-9ad0b7k2aa270.ya8@trix.bounces.google.com designates 209.85.220.69 as permitted sender) smtp.mailfrom=3t_pAYxYKANA1AD8E-D0y04BFE-9AD0B7K2AA270.yA8@trix.bounces.google.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=google.com
+Return-Path: <3t_pAYxYKANA1AD8E-D0y04BFE-9AD0B7K2AA270.yA8@trix.bounces.google.com>
+Received: from mail-sor-f69.google.com (mail-sor-f69.google.com. [209.85.220.69])
+        by mx.google.com with SMTPS id t11-20020ab0214b000000b003e1212b10dcsor23781ual.23.2022.10.07.21.21.12
+        for <ayelenrivero3389@gmail.com>
+        (Google Transport Security);
+        Fri, 07 Oct 2022 21:21:12 -0700 (PDT)
+Received-SPF: pass (google.com: domain of 3t_payxykana1ad8e-d0y04bfe-9ad0b7k2aa270.ya8@trix.bounces.google.com designates 209.85.220.69 as permitted sender) client-ip=209.85.220.69;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@google.com header.s=20210112 header.b="OzK9GUS/";
+       spf=pass (google.com: domain of 3t_payxykana1ad8e-d0y04bfe-9ad0b7k2aa270.ya8@trix.bounces.google.com designates 209.85.220.69 as permitted sender) smtp.mailfrom=3t_pAYxYKANA1AD8E-D0y04BFE-9AD0B7K2AA270.yA8@trix.bounces.google.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=google.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=google.com; s=20210112;
+        h=to:from:subject:date:message-id:feedback-id:mime-version:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=859xkgMXVXO3Ue/AcIf7PSvbS8gFvJsitJGmAbZQMbQ=;
+        b=OzK9GUS/lEGWn9NzLRurOIsy/5kWlb2QsQS1XlA0YLJE49qcL7jOsNr5A4Ls3u3cPA
+         LljYCne6xfHT8M5oUXKKcI5umLCVUv5Dr+5qaTj1JF9f+VsdG8QDBN5ZWIB5EIV2zLg3
+         GOp1++hgpVjT65k+xYh1fXMN/R7cDXOGJYIhbow/Oi8Kf5QxdNA3aCU6CjRo2JOTk63I
+         tnjVcCsrEBNDSewjFhDFRp8QKrkDPCzxKZA06WNclW5Ra0CLI9Tplp8k63QsJ1mxB86E
+         ZOMokTX8o9l1cISfaS0fnMVtKNLbx+FG8ZTgyzFwrgY9zLZJLtTVrdC7fEEBaxkENieL
+         eQCQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20210112;
+        h=to:from:subject:date:message-id:feedback-id:mime-version
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=859xkgMXVXO3Ue/AcIf7PSvbS8gFvJsitJGmAbZQMbQ=;
+        b=Q63L6rIEX9x7+G8puw/db6+bqBTH2WooAFr9BZ9q0za/BcyPkQZGC6aHXVlS/kfVNK
+         QOaS+2FEioZlFk//9tU90fKcldp3txKU3KlWd6W6OR1+6iWgpf0pd8xhyto4Hdj+L/tZ
+         Xqhx87CERDG0ZHhphRP2oOsBwYZchjU0Hzxe2BLiRYmDScL7IRys7AvciktXN/ZHsY4J
+         VpU4AkKq4gXIOP4ITeFJtsnZiTvmAtmtED4HQ5qF+LCzw5Egj8dDBEn1cebSz1q8yPIY
+         sygIexQKZkXIm7fxQqvrNnyoxyLoq6LSrOJqCKpbrsQp0nr321Pb4jMSVVuDfEXqClKC
+         d+sg==
+X-Gm-Message-State: ACrzQf3jrO/9V059xgFWYu2K8ZLmQMIIJ1PMCoSNqV2A6SWl0Bs4mA/p
+	nRxIN8fl6XFPsBIsHBhFSwmacjnNQePbIXfbyi3OPA==
+X-Google-Smtp-Source: AMsMyM4ZSEjnNEh1YEx/0dzo4Xb/wL/SFiashEcfPvZOzwx771hwa5NP7c4m25IP626lpMtkzE8irQS0x1XO9ZlHebVg3Q==
+MIME-Version: 1.0
+X-Received: by 2002:ab0:25d4:0:b0:3c1:c353:31cb with SMTP id
+ y20-20020ab025d4000000b003c1c35331cbmr4819804uan.63.1665202871977; Fri, 07
+ Oct 2022 21:21:11 -0700 (PDT)
+Feedback-ID: MailTypeResponseReceipt:GoogleForms
+X-GoogleForms-FormId: e/1FAIpQLSdjgM1_R5uw3VDQOqkTH6NGMydsT7e-PrxINGH2flq63WI34w
+X-GoogleForms-CustomerDisplayName: =?UTF-8?Q?Instituto_Tecnol=C3=B3gico_de_?=
+	=?UTF-8?Q?Buenos_Aires?=
+Message-ID: <000000000000a9da7f05ea7e41fe@google.com>
+Date: Sat, 08 Oct 2022 04:21:11 +0000
+Subject: =?UTF-8?Q?8=2F10_=2D_Curso_de_An=C3=A1lisis_de_Datos_en_Python?=
+From: Google Forms <forms-receipts-noreply@google.com>
+To: ayelenrivero3389@gmail.com
+Content-Type: multipart/alternative; boundary="000000000000a9da6905ea7e41fb"
+
+--000000000000a9da6905ea7e41fb
+Content-Type: text/plain; charset="UTF-8"; format=flowed; delsp=yes
+Content-Transfer-Encoding: base64
+
+R29vZ2xlIEZvcm1zDQoNCg0KVGhhbmtzIGZvciBmaWxsaW5nIGluIDgvMTAgLSBDdXJzbyBkZSBB
+bsOhbGlzaXMgZGUgRGF0b3MgZW4gUHl0aG9uDQpIZXJlJ3Mgd2hhdCB3YXMgcmVjZWl2ZWQuDQoN
+ClZpZXcgc2NvcmUNCg0KDQo4LzEwIC0gQ3Vyc28gZGUgQW7DoWxpc2lzIGRlIERhdG9zIGVuIFB5
+dGhvbg0KDQpFbCBvYmpldGl2byBkZSBlc3RlIHF1aXogZXMgZXZhbHVhciBsYSBjYXBhY2lkYWQg
+ZGUgYW7DoWxpc2lzLCBkZSAgDQppbnZlc3RpZ2FjacOzbiB5IGxvcyBjb25vY2ltaWVudG9zIGFk
+cXVpcmlkb3MgZHVyYW50ZSBlbCBDdXJzbyBkZSBBbsOhbGlzaXMgIA0KZGUgRGF0b3MgZW4gUHl0
+aG9uIGRlIElFRUUtSVRCQS4gTGEgYXByb2JhY2nDs24gZGVsIG1pc21vIGVzIHJlcXVpc2l0byBw
+YXJhICANCmxhIG9idGVuY2nDs24gZGUgdW4gY2VydGlmaWNhZG8gYWwgZmluYWxpemFyIGVsIGN1
+cnNvLg0KDQrwnZCI8J2QjfCdkIXwnZCO8J2QkfCdkIzwnZCA8J2QgvCdkIjwnZCOzIHwnZCNIPCd
+kIjwnZCM8J2Qj/CdkI7wnZCR8J2Qk/CdkIDwnZCN8J2Qk/CdkIQ6DQril48gRWwgcXVpeiBjb25z
+dGEgZGUgMTAgcHJlZ3VudGFzIGRlIG9wY2nDs24gbcO6bHRpcGxlDQril48gQ2FkYSBwcmVndW50
+YSB0aWVuZSB1biB2YWxvciBkZSAxDQril48gTGEgbm90YSBkZSBhcHJvYmFjacOzbiBlcyA5IChz
+w7NsbyBzZSBwZXJtaXRlIHVuYSByZXNwdWVzdGEgaW5jb3JyZWN0YSkNCuKXjyBTZSBwdWVkZSBy
+ZWFsaXphciBlbCBxdWl6IHPDs2xvIHVuYSB2ZXogcG9yIGTDrWENCuKXjyBDYWRhIGTDrWEgc2Ug
+aGFiaWxpdGFyw6EgdW4gbnVldm8gcXVpeiBjb24gbnVldmFzIHByZWd1bnRhcyBhIHRyYXbDqXMg
+ZGUgIA0KbnVlc3RyYSBww6FnaW5hDQril48gU8OzbG8gZXMgbmVjZXNhcmlvIGFwcm9iYXIgMSBk
+ZSBsb3MgcXVpeiBjb24gbGEgbm90YSBkZSBhcHJvYmFjacOzbiBpbmRpY2FkYQ0KDQrwnZCI8J2Q
+jfCdkIPwnZCI8J2QgvCdkIDwnZCC8J2QiPCdkI7wnZCN8J2QhPCdkJIg8J2QiPCdkIzwnZCP8J2Q
+jvCdkJHwnZCT8J2QgPCdkI3wnZCT8J2QhPCdkJI6DQril48gQWxndW5hcyBwcmVndW50YXMgcmVx
+dWllcmVuIGludmVzdGlnYXIgZW4gaW50ZXJuZXQgeS9vIGVqZWN1dGFyIGPDs2RpZ29zICANCmRl
+IHBydWViYQ0K4pePIFNlIHBlcm1pdGUgdXNhciBHb29nbGUgQ29sYWIgZHVyYW50ZSBlbCBxdWl6
+DQril48gU2UgcGVybWl0ZSBidXNjYXIgZW4gaW50ZXJuZXQgZW4gbGEgRG9jdW1lbnRhY2nDs24g
+ZGUgUHl0aG9uLCAgDQpTdGFja092ZXJmbG93LCBldGMuLi4NCuKXjyBObyBzZSBwZXJtaXRlIGNv
+bnN1bHRhciBjb24gb3Ryb3MgZXN0dWRpYW50ZXMgZGVsIGN1cnNvDQril48gRWwgbMOtbWl0ZSBk
+ZSB0aWVtcG8gc29uIGxhcyAxMiBkZSBsYSBub2NoZSwgZW4gZXNlIG1vbWVudG8gc2UgaGFiaWxp
+dGEgdW4gIA0KbnVldm8gcXVpeg0KDQoNCkVtYWlsICoNCg0KDQpheWVsZW5yaXZlcm8zMzg5QGdt
+YWlsLmNvbQ0KDQoNClByZWd1bnRhcw0KDQpFbCBvYmpldGl2byBkZSBlc3RlIHF1aXogZXMgZXZh
+bHVhciBsYSBjYXBhY2lkYWQgZGUgYW7DoWxpc2lzLCBkZSAgDQppbnZlc3RpZ2FjacOzbiB5IGxv
+cyBjb25vY2ltaWVudG9zIGFkcXVpcmlkb3MgZHVyYW50ZSBlbCBDdXJzbyBkZSBBbsOhbGlzaXMg
+IA0KZGUgRGF0b3MgZW4gUHl0aG9uIGRlIElFRUUtSVRCQS4gTGEgYXByb2JhY2nDs24gZGVsIG1p
+c21vIGVzIHJlcXVpc2l0byBwYXJhICANCmxhIG9idGVuY2nDs24gZGUgdW4gY2VydGlmaWNhZG8g
+YWwgZmluYWxpemFyIGVsIGN1cnNvLg0KDQrwnZCI8J2QjfCdkIXwnZCO8J2QkfCdkIzwnZCA8J2Q
+gvCdkIjwnZCOzIHwnZCNIPCdkIjwnZCM8J2Qj/CdkI7wnZCR8J2Qk/CdkIDwnZCN8J2Qk/CdkIQ6
+DQril48gRWwgcXVpeiBjb25zdGEgZGUgMTAgcHJlZ3VudGFzIGRlIG9wY2nDs24gbcO6bHRpcGxl
+DQril48gQ2FkYSBwcmVndW50YSB0aWVuZSB1biB2YWxvciBkZSAxDQril48gTGEgbm90YSBkZSBh
+cHJvYmFjacOzbiBlcyA5IChzw7NsbyBzZSBwZXJtaXRlIHVuYSByZXNwdWVzdGEgaW5jb3JyZWN0
+YSkNCuKXjyBTZSBwdWVkZSByZWFsaXphciBlbCBxdWl6IHPDs2xvIHVuYSB2ZXogcG9yIGTDrWEN
+CuKXjyBDYWRhIGTDrWEgc2UgaGFiaWxpdGFyw6EgdW4gbnVldm8gcXVpeiBjb24gbnVldmFzIHBy
+ZWd1bnRhcyBhIHRyYXbDqXMgZGUgIA0KbnVlc3RyYSBww6FnaW5hDQril48gU8OzbG8gZXMgbmVj
+ZXNhcmlvIGFwcm9iYXIgMSBkZSBsb3MgcXVpeiBjb24gbGEgbm90YSBkZSBhcHJvYmFjacOzbiBp
+bmRpY2FkYQ0KDQrwnZCI8J2QjfCdkIPwnZCI8J2QgvCdkIDwnZCC8J2QiPCdkI7wnZCN8J2QhPCd
+kJIg8J2QiPCdkIzwnZCP8J2QjvCdkJHwnZCT8J2QgPCdkI3wnZCT8J2QhPCdkJI6DQril48gQWxn
+dW5hcyBwcmVndW50YXMgcmVxdWllcmVuIGludmVzdGlnYXIgZW4gaW50ZXJuZXQgeS9vIGVqZWN1
+dGFyIGPDs2RpZ29zICANCmRlIHBydWViYQ0K4pePIFNlIHBlcm1pdGUgdXNhciBHb29nbGUgQ29s
+YWIgZHVyYW50ZSBlbCBxdWl6DQril48gU2UgcGVybWl0ZSBidXNjYXIgZW4gaW50ZXJuZXQgZW4g
+bGEgRG9jdW1lbnRhY2nDs24gZGUgUHl0aG9uLCAgDQpTdGFja092ZXJmbG93LCBldGMuLi4NCuKX
+jyBObyBzZSBwZXJtaXRlIGNvbnN1bHRhciBjb24gb3Ryb3MgZXN0dWRpYW50ZXMgZGVsIGN1cnNv
+DQril48gRWwgbMOtbWl0ZSBkZSB0aWVtcG8gc29uIGxhcyAxMiBkZSBsYSBub2NoZSwgZW4gZXNl
+IG1vbWVudG8gc2UgaGFiaWxpdGEgdW4gIA0KbnVldm8gcXVpeg0KDQoNCkVsZWdpciBjdcOhbCBk
+ZSBsYXMgb3BjaW9uZXMgY29tcGxldGEgZWwgY8OzZGlnbyAoaHR0cHM6Ly9pbWd1ci5jb20vQkpL
+b29vTSkgIA0KZW4gZnVuY2nDs24gZGUgbGEgc2lndWllbnRlIGJhc2UgZGUgZGF0b3MgKGh0dHBz
+Oi8vaW1ndXIuY29tL2sxUFJZREopLg0KQ2FwdGlvbmxlc3MgSW1hZ2UNCg0KDQpodHRwczovL2lt
+Z3VyLmNvbS9ZWUcwQnpLDQoNCg0KaHR0cHM6Ly9pbWd1ci5jb20vWVlHMEJ6Sw0KDQoNCmh0dHBz
+Oi8vaW1ndXIuY29tLzJ2V2pUN1oNCg0KDQpodHRwczovL2ltZ3VyLmNvbS8ydldqVDdaDQoNCg0K
+aHR0cHM6Ly9pbWd1ci5jb20vTWQ5SFNSVw0KDQoNCmh0dHBzOi8vaW1ndXIuY29tL01kOUhTUlcN
+Cg0KDQpodHRwczovL2ltZ3VyLmNvbS9ueElDZ1kyDQoNCg0KaHR0cHM6Ly9pbWd1ci5jb20vbnhJ
+Q2dZMg0KDQoNCmh0dHBzOi8vaW1ndXIuY29tL0x1azdJc0cNCg0KDQpodHRwczovL2ltZ3VyLmNv
+bS9MdWs3SXNHDQoNCg0KRW4gZnVuY2nDs24gYSBsYSBiYXNlIGRlIGRhdG9zIChodHRwczovL2lt
+Z3VyLmNvbS92OFZucUVBKSBkZXRlcm1pbmUgcXVlICANCmltcHJpbWlyw6EgZGUgZXN0ZSBwcm9n
+cmFtYSAoaHR0cHM6Ly9pbWd1ci5jb20vS25NUmdwdykuDQpDYXB0aW9ubGVzcyBJbWFnZQ0KDQoN
+Cmh0dHBzOi8vaW1ndXIuY29tL1FtclZ4aGYNCg0KDQpodHRwczovL2ltZ3VyLmNvbS9RbXJWeGhm
+DQoNCg0KaHR0cHM6Ly9pbWd1ci5jb20vQ3NkM2JLbA0KDQoNCmh0dHBzOi8vaW1ndXIuY29tL0Nz
+ZDNiS2wNCg0KDQpodHRwczovL2ltZ3VyLmNvbS9EazJhVVp5DQoNCg0KaHR0cHM6Ly9pbWd1ci5j
+b20vRGsyYVVaeQ0KDQoNCmh0dHBzOi8vaW1ndXIuY29tL3VpR1FNRGoNCg0KDQpodHRwczovL2lt
+Z3VyLmNvbS91aUdRTURqDQoNCg0KaHR0cHM6Ly9pbWd1ci5jb20vOE5xZndpWQ0KDQoNCmh0dHBz
+Oi8vaW1ndXIuY29tLzhOcWZ3aVkNCg0KDQpFbiBmdW5jacOzbiBhIGxhIGJhc2UgZGUgZGF0b3Mg
+KGh0dHBzOi8vaW1ndXIuY29tL2hWWklxd0EpIGRldGVybWluZSBxdcOpICANCmltcHJpbWlyw6Eg
+ZXN0ZSBwcm9ncmFtYSAoaHR0cHM6Ly9pbWd1ci5jb20vMk90NDVMeCkuDQpDYXB0aW9ubGVzcyBJ
+bWFnZQ0KDQoNCmh0dHBzOi8vaW1ndXIuY29tL21yZXJzVHQNCg0KDQpodHRwczovL2ltZ3VyLmNv
+bS9tcmVyc1R0DQoNCg0KaHR0cHM6Ly9pbWd1ci5jb20vc2hVaXVQYQ0KDQoNCmh0dHBzOi8vaW1n
+dXIuY29tL3NoVWl1UGENCg0KDQpodHRwczovL2ltZ3VyLmNvbS9XVlRHSUxmDQoNCg0KaHR0cHM6
+Ly9pbWd1ci5jb20vV1ZUR0lMZg0KDQoNCmh0dHBzOi8vaW1ndXIuY29tL1o4emJBSTcNCg0KDQpo
+dHRwczovL2ltZ3VyLmNvbS9aOHpiQUk3DQoNCg0KaHR0cHM6Ly9pbWd1ci5jb20vMG42dkR1ZA0K
+DQoNCmh0dHBzOi8vaW1ndXIuY29tLzBuNnZEdWQNCg0KDQpFbiBmdW5jacOzbiBhIGxhIGJhc2Ug
+ZGUgZGF0b3MgKGh0dHBzOi8vaW1ndXIuY29tLzVDUTM5QTEpIGRldGVybWluZSBxdcOpICANCmlt
+cHJpbWlyw6EgZXN0ZSBwcm9ncmFtYSAoaHR0cHM6Ly9pbWd1ci5jb20vaXUzN0h1eikuDQpDYXB0
+aW9ubGVzcyBJbWFnZQ0KDQoNCmh0dHBzOi8vaW1ndXIuY29tL2RQS0NuU2UNCg0KDQpodHRwczov
+L2ltZ3VyLmNvbS9kUEtDblNlDQoNCg0KaHR0cHM6Ly9pbWd1ci5jb20vNlpTdzY3Sg0KDQoNCmh0
+dHBzOi8vaW1ndXIuY29tLzZaU3c2N0oNCg0KDQpodHRwczovL2ltZ3VyLmNvbS9iY3UxOTlKDQoN
+Cg0KaHR0cHM6Ly9pbWd1ci5jb20vYmN1MTk5Sg0KDQoNCmh0dHBzOi8vaW1ndXIuY29tL002N3dE
+MnENCg0KDQpodHRwczovL2ltZ3VyLmNvbS9NNjd3RDJxDQoNCg0KaHR0cHM6Ly9pbWd1ci5jb20v
+c3owb2tKSQ0KDQoNCmh0dHBzOi8vaW1ndXIuY29tL3N6MG9rSkkNCg0KDQpVbiBkb2NlbnRlIGRl
+bCBJVEJBIHRpZW5lIGVuIHVuIGFyY2hpdm8gLnhsc3ggbGFzIG5vdGFzIGRlIHN1cyBhbHVtbm9z
+LiBMYXMgIA0KY29sdW1uYXMgZGVsIGFyY2hpdm8gc29uICdMZWdham8nLCAnQ3Vyc2FkYScgeSAn
+RmluYWwnLiBFbCBkb2NlbnRlIGRlc2VhICANCm9yZGVuYXIgc3UgYXJjaGl2byB0YWwgcXVlIGxh
+cyBub3RhcyBkZSBmaW5hbGVzIGFwYXJlemNhbiBlbiBmb3JtYSAgDQpkZXNjZW5kaWVudGUgY29u
+IG5vdGFzIGRlIGN1cnNhZGEgYXNjZW5kaWVudGUgcGFyYSBjYWRhIGdydXBvIGRlIG5vdGFzIGRl
+ICANCmZpbmFsZXMuIEEgY29udGludWFjacOzbiBzZSBhZGp1bnRhIHVuYSBjYXB0dXJhIGRlIGPD
+s21vIHNlIGRlYmVyw61hIHZlciBlbCAgDQpkYXRhZnJhbWUgYW50ZXMgeSBkZXNwdcOpcyBkZSBv
+cmRlbmFybG8uIEluZGlxdWUgY3XDoWwgc2Vyw61hIGxhIGZvcm1hIG3DoXMgIA0KY29udmVuaWVu
+dGUgZGUgdXNhciAuc29ydF92YWx1ZXMoKS4gKg0KQ2FwdGlvbmxlc3MgSW1hZ2UNCg0KDQpkZi5z
+b3J0X3ZhbHVlcyhieSA9IFsnQ3Vyc2FkYScsICdGaW5hbCddLCBhc2NlbmRpbmcgPSBGYWxzZSkN
+Cg0KDQpkZi5zb3J0X3ZhbHVlcyhieSA9IFsnRmluYWwnLCAnQ3Vyc2FkYSddLCBhc2NlbmRpbmcg
+PSBbVHJ1ZSwgRmFsc2VdKQ0KDQoNCmRmLnNvcnRfdmFsdWVzKGJ5ID0gWydGaW5hbCddICsgWydD
+dXJzYWRhJ10sIGFzY2VuZGluZyA9IFtGYWxzZSwgVHJ1ZV0pDQoNCg0KZGYuc29ydF92YWx1ZXMo
+YnkgPSBbJ0N1cnNhZGEnXSArIFsnRmluYWwnXSwgYXNjZW5kaW5nID0gW1RydWUsIEZhbHNlXSkN
+Cg0KDQrCv0N1w6FsIGRlIGVzdGFzIG9wY2lvbmVzIHBlcm1pdGUgbW9kaWZpY2FyIGxhIHBhbGV0
+YSBkZSBjb2xvcmVzIHF1ZSBzZSAgDQp1dGlsaXphIGVuIHVuIGdyw6FmaWNvIGRlIHN1cGVyZmlj
+aWUgdHJpZGltZW5zaW9uYWwgY3JlYWRvIHVzYW5kbyBsYSAgDQppbnN0cnVjY2nDs24gcGxvdF9z
+dXJmYWNlPw0KQ2FwdGlvbmxlc3MgSW1hZ2UNCg0KDQpTZWxlY2Npb25hbmRvIHVubyBkZSBsb3Mg
+c3R5bGUgc2hlZXRzIGluY2x1w61kb3MgZW4gbWF0cGxvdGxpYiBtZWRpYW50ZSBsYSAgDQppbnN0
+cnVjY2nDs24gcGx0LnN0eWxlLnVzZQ0KDQoNCkFzaWduYW5kbyB1biB2YWxvciBhbCBwYXLDoW1l
+dHJvIGZpbGxzdHlsZSBkZSBsYSBpbnN0cnVjY2nDs24gcGxvdF9zdXJmYWNlDQoNCg0KQXNpZ25h
+bmRvIHVuIHZhbG9yIGFsIHBhcsOhbWV0cm8gY29sb3IgZGUgbGEgaW5zdHJ1Y2Npw7NuIHBsb3Rf
+c3VyZmFjZQ0KDQoNCkFzaWduYW5kbyB1biB2YWxvciBhbCBwYXLDoW1ldHJvIGNtYXAgZGUgbGEg
+aW5zdHJ1Y2Npw7NuIHBsb3Rfc3VyZmFjZQ0KDQoNCkx1ZWdvIGRlIGZpbmFsaXphciBsYSBpbnNj
+cmlwY2nDs24gYSB1biBldmVudG8gc2UgcXVpZXJlIGFuYWxpemFyIGxvcyBkYXRvcyAgDQpkZSBs
+YSBtaXNtYSwgcGFyYSBlbGxvIGxhIGluZm9ybWFjacOzbiBkZWwgZm9ybXVsYXJpbyBmdWUgZXhw
+b3J0YWRhIGEgdW4gIA0KYXJjaGl2byB5IHNlIHF1aWVyZSB1c2FyIGVzdGUgc2ltcGxlIGPDs2Rp
+Z28gcGFyYSBhbmFsaXphciBlbCBkb21pbmlvIGRlICANCmNvcnJlbyBlbGVjdHLDs25pY28gbcOh
+cyB1dGlsaXphZG8gwr9DdcOhbCBkZSBsb3Mgc2lndWllbnRlcyBncsOhZmljb3MgZnVlICANCmdl
+bmVyYWRvIHVzYW5kbyBlc3RlIHByb2dyYW1hPw0KQ2FwdGlvbmxlc3MgSW1hZ2UNCg0KDQpodHRw
+czovL2ltZ3VyLmNvbS9hL2lHMWN5YWINCg0KDQpodHRwczovL2ltZ3VyLmNvbS9hL2lHMWN5YWIN
+Cg0KDQpodHRwczovL2ltZ3VyLmNvbS9hL0NOTm1sTnMNCg0KDQpodHRwczovL2ltZ3VyLmNvbS9h
+L0NOTm1sTnMNCg0KDQpodHRwczovL2ltZ3VyLmNvbS9hLzVnNUlsQkQNCg0KDQpodHRwczovL2lt
+Z3VyLmNvbS9hLzVnNUlsQkQNCg0KDQpodHRwczovL2ltZ3VyLmNvbS9hL1poeW8xQWsNCg0KDQpo
+dHRwczovL2ltZ3VyLmNvbS9hL1poeW8xQWsNCg0KDQpodHRwczovL2ltZ3VyLmNvbS9hL0Y1SzlZ
+SjINCg0KDQpodHRwczovL2ltZ3VyLmNvbS9hL0Y1SzlZSjINCg0KDQpVbiBwcm9ncmFtYSBkZSBQ
+eXRob24gcXVlIHV0aWxpemEgZnVuY2lvbmVzIGRlIG1hdHBsb3RsaWIgbm8gbGFuesOzIG5pbmfD
+um4gIA0KZXJyb3IgY3VhbmRvIHNlIGludGVudMOzIGVqZWN1dGFyLCBzaW4gZW1iYXJnbyBlbCBn
+csOhZmljbyBxdWUgZnVlIGdlbmVyYWRvICANCnRpZW5lIHVuIHByb2JsZW1hOiBlcyB1bmEgaW1h
+Z2VuIGNvbXBsZXRhbWVudGUgZW4gYmxhbmNvIMK/Q3XDoWwgZXMgbGEgY2F1c2EgIA0KZGVsIHBy
+b2JsZW1hPw0KQ2FwdGlvbmxlc3MgSW1hZ2UNCg0KDQpMYXMgbGlzdGFzIHF1ZSBjb250aWVuZW4g
+bGFzIGNvb3JkZW5hZGFzIGRlIGxvcyBwdW50b3MgYSBncmFmaWNhciB0aWVuZW4gIA0KZGlzdGlu
+dGEgbG9uZ2l0dWQNCg0KDQpMYXMgbGlzdGFzIHF1ZSBjb250aWVuZW4gbGFzIGNvb3JkZW5hZGFz
+IGRlIGxvcyBwdW50b3MgYSBncmFmaWNhciB0aWVuZW4gIA0KZGlzdGludG9zIHRpcG9zIGRlIGRh
+dG9zIChpbnQvZmxvYXQvc3RyaW5nL2V0Yy4uLikNCg0KDQpFbCBwYXLDoW1ldHJvIGRlIHBsdC5w
+bG90IHF1ZSBjb25maWd1cmEgZWwgY29sb3IgeSB0aXBvIGRlIGzDrW5lYSBubyB0aWVuZSBlbCAg
+DQpmb3JtYXRvIGNvcnJlY3RvDQoNCg0KRWwgcGFyw6FtZXRybyBkZSBwbHQucGxvdCBxdWUgY29u
+ZmlndXJhIGxhIGxleWVuZGEgZGVsIGdyw6FmaWNvIG5vIHRpZW5lIGVsICANCmZvcm1hdG8gY29y
+cmVjdG8NCg0KDQpFbCBvcmRlbiBlbiBlbCBjdWFsIHNlIGxsYW1hbiBsYXMgZnVuY2lvbmVzIGRl
+IG1hdHBsb3RsaWIgKHBsb3QsIGxlZ2VuZCwgIA0Kc2hvdywgc2F2ZWZpZykgbm8gZXMgZWwgY29y
+cmVjdG8NCg0KDQpVbiBncnVwbyBkZSBpbnZlc3RpZ2FjacOzbiBlc3TDoSB1dGlsaXphbmRvIHVu
+IGluc3RydW1lbnRvIGRlIG1lZGljacOzbiBwYXJhICANCm9idGVuZXIgZGF0b3MgZGUgdW5vIGRl
+IGxvcyBjaXJjdWl0b3MgZWxlY3Ryw7NuaWNvcyBjb24gbG9zIHF1ZSB0cmFiYWphbi4gIA0KTG9z
+IGRhdG9zIGZ1ZXJvbiBleHBvcnRhZG9zIGEgdW4gYXJjaGl2byB5IHNlIHF1aWVyZSB1c2FyIGVz
+dGUgc2ltcGxlICANCmPDs2RpZ28gcGFyYSB2aXN1YWxpemFyIGxvcyByZXN1bHRhZG9zIMK/Q3XD
+oWwgZGUgbG9zIHNpZ3VpZW50ZXMgZ3LDoWZpY29zIGZ1ZSAgDQpnZW5lcmFkbyB1c2FuZG8gZXN0
+ZSBwcm9ncmFtYT8gKg0KQ2FwdGlvbmxlc3MgSW1hZ2UNCg0KDQpodHRwczovL2ltZ3VyLmNvbS9h
+L0VPTk1KNlMNCg0KDQpodHRwczovL2ltZ3VyLmNvbS9hL0VPTk1KNlMNCg0KDQpodHRwczovL2lt
+Z3VyLmNvbS9hL2I1enQ2U3ANCg0KDQpodHRwczovL2ltZ3VyLmNvbS9hL2I1enQ2U3ANCg0KDQpo
+dHRwczovL2ltZ3VyLmNvbS9hL0pZelBjWVENCg0KDQpodHRwczovL2ltZ3VyLmNvbS9hL0pZelBj
+WVENCg0KDQpodHRwczovL2ltZ3VyLmNvbS9hL0FuRHN4ZlINCg0KDQpodHRwczovL2ltZ3VyLmNv
+bS9hL0FuRHN4ZlINCg0KDQpodHRwczovL2ltZ3VyLmNvbS9hL3BNQkNjalYNCg0KDQpodHRwczov
+L2ltZ3VyLmNvbS9hL3BNQkNjalYNCg0KDQrCv1F1w6kgc3VicGxvdCBzZSBlc3TDoSBzZWxlY2Np
+b25hbmRvIG1lZGlhbnRlIGVsIHVzbyBkZSBsYSBpbnN0cnVjY2nDs24gIA0KcGx0LnN1YnBsb3Qo
+MiwgMiwgMykgPw0KDQoNCmh0dHBzOi8vaW1ndXIuY29tL2EvVjluYnRZRQ0KDQoNCmh0dHBzOi8v
+aW1ndXIuY29tL2EvVjluYnRZRQ0KDQoNCmh0dHBzOi8vaW1ndXIuY29tL2EvTnNkTmdDSQ0KDQoN
+Cmh0dHBzOi8vaW1ndXIuY29tL2EvTnNkTmdDSQ0KDQoNCmh0dHBzOi8vaW1ndXIuY29tL2EvVUxH
+Z1AxbA0KDQoNCmh0dHBzOi8vaW1ndXIuY29tL2EvVUxHZ1AxbA0KDQoNCmh0dHBzOi8vaW1ndXIu
+Y29tL2EvcWZKOElSSg0KDQoNCmh0dHBzOi8vaW1ndXIuY29tL2EvcWZKOElSSg0KDQoNCkNyZWF0
+ZSB5b3VyIG93biBHb29nbGUgRm9ybQ0KDQpSZXBvcnQgQWJ1c2UNCg0KDQo=
+--000000000000a9da6905ea7e41fb
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<html><head><style nonce=3D"6-XwLVe3NEQKlAXnOq8mBQ">@import url(https://fon=
+ts.googleapis.com/css?family=3DGoogle+Sans:400,500|Roboto:300,400,400i,500,=
+700&subset=3Dlatin,vietnamese,latin-ext,cyrillic,greek,cyrillic-ext,greek-e=
+xt);</style><style nonce=3D"6-XwLVe3NEQKlAXnOq8mBQ">[class=3D"x_body-conten=
+t-wrapper"] * {white-space: normal !important;}</style></head><body dir=3D"=
+ltr" style=3D"color: #202124;font-family: Roboto,Helvetica,Arial,sans-serif=
+;font-size: 14px; font-weight: 400; line-height: 20px;text-align: start; wo=
+rd-wrap: break-word; margin: 0; padding: 0; height: 100%; width: 100%;"><ta=
+ble border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"background-co=
+lor:rgb(103,58,183);" width=3D"100%" role=3D"presentation"><tbody><tr heigh=
+t=3D"64px"><td style=3D"padding: 0 24px;"><img alt=3D"Google Forms" height=
+=3D"26px" style=3D"display: inline-block; margin: 0; vertical-align: middle=
+;" width=3D"143px" src=3D"https://www.gstatic.com/docs/forms/google_forms_l=
+ogo_lockup_white_2x.png"></td></tr></tbody></table><div class=3D"body-conte=
+nt-wrapper" style=3D"padding: 12px; background-color: rgb(237,231,246);"><d=
+iv style=3D"margin: 0 auto; max-width: 640px; min-width: 154px;"><div style=
+=3D"border: 1px solid #dadce0; padding: 20px 12px;background-color: #fff; b=
+order-radius: 8px; margin-bottom: 12px;padding: 20px;"><h1 style=3D"color: =
+#202124;font-family: Roboto,Helvetica,Arial,sans-serif;font-size: 20px; fon=
+t-weight: 400; line-height: 28px;margin: 0 0 12px;">Thanks for filling in <=
+a href=3D"https://docs.google.com/forms/d/e/1FAIpQLSdjgM1_R5uw3VDQOqkTH6NGM=
+ydsT7e-PrxINGH2flq63WI34w/viewform?usp=3Dmail_form_link" target=3D"_blank" =
+style=3D"white-space: pre-wrap;">8/10 - Curso de An=C3=A1lisis de Datos en =
+Python</a></h1>Here's what was received.<div style=3D"margin-top: 16px;"><d=
+iv style=3D"margin-top: 24px"><a href=3D"https://docs.google.com/forms/u/0/=
+d/e/1FAIpQLSdjgM1_R5uw3VDQOqkTH6NGMydsT7e-PrxINGH2flq63WI34w/viewscore?view=
+score=3DAE0zAgCm2l0sWmuRIIgxccD7WyXDq8bb2w7XymNTJKyNW43WscaENmrY1bX5DztUUw"=
+ target=3D"_blank" style=3D"border-radius: 4px;font-family: &#39;Google San=
+s&#39;,Roboto,Helvetica,Arial,sans-serif;font-size: 14px; font-weight: 500;=
+ padding: 8px 24px; text-align: center; text-decoration: none;background-co=
+lor: rgb(103,58,183); color: #fff;">View score</a></div><div itemprop=3D"ac=
+tion" itemscope itemtype=3D"http://schema.org/ViewAction"><meta itemprop=3D=
+"url" content=3D"https://docs.google.com/forms/u/0/d/e/1FAIpQLSdjgM1_R5uw3V=
+DQOqkTH6NGMydsT7e-PrxINGH2flq63WI34w/viewscore?viewscore=3DAE0zAgCm2l0sWmuR=
+IIgxccD7WyXDq8bb2w7XymNTJKyNW43WscaENmrY1bX5DztUUw"><meta itemprop=3D"name"=
+ content=3D"View your score"></div></div></div><div style=3D"border-bottom:=
+ 1px solid #dadce0; border-left: 1px solid #dadce0; border-right: 1px solid=
+ #dadce0; border-top: 8px solid rgb(103,58,183); padding: 20px;background-c=
+olor: #fff; border-radius: 8px; margin-bottom: 12px;"><h1 dir=3D"ltr" style=
+=3D"font-family: Roboto,Helvetica,Arial,sans-serif;font-size: 32px; font-we=
+ight: 400; line-height: 42px;white-space: pre-wrap;margin: 0 0 12px;">8/10 =
+- Curso de An=C3=A1lisis de Datos en Python</h1><div style=3D"white-space: =
+pre-wrap;margin-bottom: 12px;">El objetivo de este quiz es evaluar la capac=
+idad de an=C3=A1lisis, de investigaci=C3=B3n y los conocimientos adquiridos=
+ durante el Curso de An=C3=A1lisis de Datos en Python de IEEE-ITBA. La apro=
+baci=C3=B3n del mismo es requisito para la obtenci=C3=B3n de un certificado=
+ al finalizar el curso.<br><br>=F0=9D=90=88=F0=9D=90=8D=F0=9D=90=85=F0=9D=
+=90=8E=F0=9D=90=91=F0=9D=90=8C=F0=9D=90=80=F0=9D=90=82=F0=9D=90=88=F0=9D=90=
+=8E=CC=81=F0=9D=90=8D =F0=9D=90=88=F0=9D=90=8C=F0=9D=90=8F=F0=9D=90=8E=F0=
+=9D=90=91=F0=9D=90=93=F0=9D=90=80=F0=9D=90=8D=F0=9D=90=93=F0=9D=90=84:<br>=
+=C2=A0 =C2=A0=E2=97=8F El quiz consta de 10 preguntas de opci=C3=B3n m=C3=
+=BAltiple<br>=C2=A0 =C2=A0=E2=97=8F Cada pregunta tiene un valor de 1<br>=
+=C2=A0 =C2=A0=E2=97=8F La nota de aprobaci=C3=B3n es 9 (s=C3=B3lo se permit=
+e una respuesta incorrecta)<br>=C2=A0 =C2=A0=E2=97=8F Se puede realizar el =
+quiz s=C3=B3lo una vez por d=C3=ADa<br>=C2=A0 =C2=A0=E2=97=8F Cada d=C3=ADa=
+ se habilitar=C3=A1 un nuevo quiz con nuevas preguntas a trav=C3=A9s de nue=
+stra p=C3=A1gina<br>=C2=A0 =C2=A0=E2=97=8F S=C3=B3lo es necesario aprobar 1=
+ de los quiz con la nota de aprobaci=C3=B3n indicada<br><br>=F0=9D=90=88=F0=
+=9D=90=8D=F0=9D=90=83=F0=9D=90=88=F0=9D=90=82=F0=9D=90=80=F0=9D=90=82=F0=9D=
+=90=88=F0=9D=90=8E=F0=9D=90=8D=F0=9D=90=84=F0=9D=90=92 =F0=9D=90=88=F0=9D=
+=90=8C=F0=9D=90=8F=F0=9D=90=8E=F0=9D=90=91=F0=9D=90=93=F0=9D=90=80=F0=9D=90=
+=8D=F0=9D=90=93=F0=9D=90=84=F0=9D=90=92:<br>=C2=A0 =C2=A0=E2=97=8F Algunas =
+preguntas requieren investigar en internet y/o ejecutar c=C3=B3digos de pru=
+eba<br>=C2=A0 =C2=A0=E2=97=8F Se permite usar Google Colab durante el quiz<=
+br>=C2=A0 =C2=A0=E2=97=8F Se permite buscar en internet en la Documentaci=
+=C3=B3n de Python, StackOverflow, etc...<br>=C2=A0 =C2=A0=E2=97=8F No se pe=
+rmite consultar con otros estudiantes del curso<br>=C2=A0 =C2=A0=E2=97=8F E=
+l l=C3=ADmite de tiempo son las 12 de la noche, en ese momento se habilita =
+un nuevo quiz<br></div></div><div style=3D"border: 1px solid #dadce0; paddi=
+ng: 20px 12px;background-color: #fff; border-radius: 8px; margin-bottom: 12=
+px;margin-bottom: 12px;"><div style=3D"padding: 0 12px;"><h2 dir=3D"auto" s=
+tyle=3D"color: #202124;font-family: Roboto,Helvetica,Arial,sans-serif;font-=
+size: 16px; font-weight: 400; line-height: 24px;white-space: pre-wrap;margi=
+n: 0 0 16px;">Email<span style=3D"color: #d93025;" aria-label=3D"Required q=
+uestion"> *</span></h2></div><div style=3D"padding: 0 12px;"><div style=3D"=
+width: 100%;"><div dir=3D"auto" style=3D"white-space: pre-wrap;border-botto=
+m: 1px dotted rgba(0,0,0,0.38);margin: 12px 0 8px; min-height: 20px;display=
+: inline-block; max-width: 100%; min-width: 50%;">ayelenrivero3389@gmail.co=
+m</div></div></div></div><div style=3D"border-bottom: 1px solid #dadce0; bo=
+rder-left: 1px solid #dadce0; border-right: 1px solid #dadce0; border-top: =
+8px solid rgb(103,58,183); padding: 0;background-color: #fff; border-radius=
+: 8px; margin-bottom: 12px;margin-bottom: 12px;"><div style=3D"padding: 0 ;=
+"><h2 dir=3D"auto" style=3D"color: #fff;font-family: Roboto,Helvetica,Arial=
+,sans-serif;font-size: 16px; font-weight: 400; line-height: 24px;background=
+-color: rgb(103,58,183); margin: 0; padding: 4px 24px 12px;">Preguntas</h2>=
+<div dir=3D"auto" style=3D"color: #202124;font-family: Roboto,Helvetica,Ari=
+al,sans-serif;font-size: 12px; font-weight: 400; letter-spacing: .25px; lin=
+e-height: 16px;white-space: pre-wrap;margin: 24px 17px;">El objetivo de est=
+e quiz es evaluar la capacidad de an=C3=A1lisis, de investigaci=C3=B3n y lo=
+s conocimientos adquiridos durante el Curso de An=C3=A1lisis de Datos en Py=
+thon de IEEE-ITBA. La aprobaci=C3=B3n del mismo es requisito para la obtenc=
+i=C3=B3n de un certificado al finalizar el curso.<br><br>=F0=9D=90=88=F0=9D=
+=90=8D=F0=9D=90=85=F0=9D=90=8E=F0=9D=90=91=F0=9D=90=8C=F0=9D=90=80=F0=9D=90=
+=82=F0=9D=90=88=F0=9D=90=8E=CC=81=F0=9D=90=8D =F0=9D=90=88=F0=9D=90=8C=F0=
+=9D=90=8F=F0=9D=90=8E=F0=9D=90=91=F0=9D=90=93=F0=9D=90=80=F0=9D=90=8D=F0=9D=
+=90=93=F0=9D=90=84:<br>=C2=A0 =C2=A0=E2=97=8F El quiz consta de 10 pregunta=
+s de opci=C3=B3n m=C3=BAltiple<br>=C2=A0 =C2=A0=E2=97=8F Cada pregunta tien=
+e un valor de 1<br>=C2=A0 =C2=A0=E2=97=8F La nota de aprobaci=C3=B3n es 9 (=
+s=C3=B3lo se permite una respuesta incorrecta)<br>=C2=A0 =C2=A0=E2=97=8F Se=
+ puede realizar el quiz s=C3=B3lo una vez por d=C3=ADa<br>=C2=A0 =C2=A0=E2=
+=97=8F Cada d=C3=ADa se habilitar=C3=A1 un nuevo quiz con nuevas preguntas =
+a trav=C3=A9s de nuestra p=C3=A1gina<br>=C2=A0 =C2=A0=E2=97=8F S=C3=B3lo es=
+ necesario aprobar 1 de los quiz con la nota de aprobaci=C3=B3n indicada<br=
+><br>=F0=9D=90=88=F0=9D=90=8D=F0=9D=90=83=F0=9D=90=88=F0=9D=90=82=F0=9D=90=
+=80=F0=9D=90=82=F0=9D=90=88=F0=9D=90=8E=F0=9D=90=8D=F0=9D=90=84=F0=9D=90=92=
+ =F0=9D=90=88=F0=9D=90=8C=F0=9D=90=8F=F0=9D=90=8E=F0=9D=90=91=F0=9D=90=93=
+=F0=9D=90=80=F0=9D=90=8D=F0=9D=90=93=F0=9D=90=84=F0=9D=90=92:<br>=C2=A0 =C2=
+=A0=E2=97=8F Algunas preguntas requieren investigar en internet y/o ejecuta=
+r c=C3=B3digos de prueba<br>=C2=A0 =C2=A0=E2=97=8F Se permite usar Google C=
+olab durante el quiz<br>=C2=A0 =C2=A0=E2=97=8F Se permite buscar en interne=
+t en la Documentaci=C3=B3n de Python, StackOverflow, etc...<br>=C2=A0 =C2=
+=A0=E2=97=8F No se permite consultar con otros estudiantes del curso<br>=C2=
+=A0 =C2=A0=E2=97=8F El l=C3=ADmite de tiempo son las 12 de la noche, en ese=
+ momento se habilita un nuevo quiz<br></div></div><div style=3D"padding: 0 =
+12px;"></div></div><div style=3D"border: 1px solid #dadce0; padding: 20px 1=
+2px;background-color: #fff; border-radius: 8px; margin-bottom: 12px;margin-=
+bottom: 12px;"><div style=3D"padding: 0 12px;"><h2 dir=3D"auto" style=3D"co=
+lor: #202124;font-family: Roboto,Helvetica,Arial,sans-serif;font-size: 16px=
+; font-weight: 400; line-height: 24px;white-space: pre-wrap;margin: 0 0 16p=
+x;">Elegir cu=C3=A1l de las opciones completa el c=C3=B3digo (<a href=3D"ht=
+tps://imgur.com/BJKoooM">https://imgur.com/BJKoooM</a>) en funci=C3=B3n de =
+la siguiente base de datos (<a href=3D"https://imgur.com/k1PRYDJ">https://i=
+mgur.com/k1PRYDJ</a>).</h2><img style=3D"border: none; max-height: 100%; ma=
+x-width: 100%;" title=3D"" src=3D"https://lh4.googleusercontent.com/V-PUZBA=
+E41QKKxtSsInpMiHrd9l3-I2VNtRJ-Ik7ctYNMKUom6S_bEeQEXw57dwuo6WKmKBsLFaejp3g7w=
+9H3bZHzAfMmQ2MFK7Gy-CLuKqsG9KyqIxISfDFaPi69kvfxA=3Dw335" alt=3D"Captionless=
+ Image"></div><div style=3D"padding: 0 12px;"><div style=3D"box-sizing: bor=
+der-box; display: inline-block; max-width: 100%; padding: 8px; vertical-ali=
+gn: top; width: 282px;"><div style=3D"border-radius: 4px; border: solid 2px=
+ rgb(103,58,183); box-sizing: border-box; height: 211px; max-height: 100%; =
+max-width: 100%; width: 266px;"><table style=3D"border-collapse: collapse;"=
+><tr><td style=3D"box-sizing: border-box; height: 207px; max-height: 100%; =
+max-width: 100%; padding: 6px; text-align: center; width: 262px;"><img styl=
+e=3D"border: none; max-height: 100%; max-width: 100%;" title=3D"https://img=
+ur.com/YYG0BzK" src=3D"https://lh6.googleusercontent.com/MzxGM0eFWPmw-H29RF=
+AQ8ZjNzSk7U_CpZPOxADwd4y4xUXezedlTDtKiTNHtOHmc_6dX8eYOlAGkEn4Kaohku7Wj1WCRF=
+lpfnqP_F1s5RS5lTxKOw1xz76nAzxsxPUl1Ug=3Dw260" alt=3D"https://imgur.com/YYG0=
+BzK"></td></tr></table></div><table style=3D"color: #202124;font-family: Ro=
+boto,Helvetica,Arial,sans-serif;font-size: 14px; font-weight: 400; line-hei=
+ght: 20px;margin-top: 8px; table-layout: fixed;"><tr><td><div role=3D"radio=
+" aria-checked=3D"true" aria-label=3D"https://imgur.com/YYG0BzK" style=3D"b=
+order: solid 2px #5f6368; height: 16px; width: 16px; border-radius: 50%;"><=
+div style=3D"background-color: #5f6368; border: solid 5px #5f6368; border-r=
+adius: 50%; margin: 3px; height: 0; width: 0;"></div></div></td><td style=
+=3D"min-width: 8px;"></td><td style=3D"word-break: break-word;">https://img=
+ur.com/YYG0BzK</td></tr></table></div><div style=3D"box-sizing: border-box;=
+ display: inline-block; max-width: 100%; padding: 8px; vertical-align: top;=
+ width: 282px;"><div style=3D"border-radius: 4px; border: solid 2px #f5f5f5=
+; box-sizing: border-box; height: 211px; max-height: 100%; max-width: 100%;=
+ width: 266px;"><table style=3D"border-collapse: collapse;"><tr><td style=
+=3D"box-sizing: border-box; height: 207px; max-height: 100%; max-width: 100=
+%; padding: 6px; text-align: center; width: 262px;"><img style=3D"border: n=
+one; max-height: 100%; max-width: 100%;" title=3D"https://imgur.com/2vWjT7Z=
+" src=3D"https://lh5.googleusercontent.com/S6YlTTVKOca9a94wEM5xuAF1elVoZ5Nt=
+qC5EBeEucnexWqqeBLbQvkfzMsVl_PfB-DLEQn-kc6nyOHA6ZZgCMFBbDNQq9rExllS8CbhP9L3=
+mATMLjJIZDsEVr91vobl74g=3Dw260" alt=3D"https://imgur.com/2vWjT7Z"></td></tr=
+></table></div><table style=3D"color: #202124;font-family: Roboto,Helvetica=
+,Arial,sans-serif;font-size: 14px; font-weight: 400; line-height: 20px;colo=
+r: #70757a;margin-top: 8px; table-layout: fixed;"><tr><td><div role=3D"radi=
+o" aria-checked=3D"false" aria-label=3D"https://imgur.com/2vWjT7Z" style=3D=
+"border: solid 2px #9aa0a6; height: 16px; width: 16px; border-radius: 50%;"=
+></div></td><td style=3D"min-width: 8px;"></td><td style=3D"word-break: bre=
+ak-word;">https://imgur.com/2vWjT7Z</td></tr></table></div><div style=3D"bo=
+x-sizing: border-box; display: inline-block; max-width: 100%; padding: 8px;=
+ vertical-align: top; width: 282px;"><div style=3D"border-radius: 4px; bord=
+er: solid 2px #f5f5f5; box-sizing: border-box; height: 211px; max-height: 1=
+00%; max-width: 100%; width: 266px;"><table style=3D"border-collapse: colla=
+pse;"><tr><td style=3D"box-sizing: border-box; height: 207px; max-height: 1=
+00%; max-width: 100%; padding: 6px; text-align: center; width: 262px;"><img=
+ style=3D"border: none; max-height: 100%; max-width: 100%;" title=3D"https:=
+//imgur.com/Md9HSRW" src=3D"https://lh3.googleusercontent.com/2WTsmS_37cZje=
+jkr5BrQ_jpLAo8ELkzBLs48blhelIBlKj4EiodqwSuM8ko6Yz0JfQ94LsOq4k_TvbWu7QEkFeiF=
+eC1gxg2jVGshca8Rt75BbmsbHtmQTlNkqBPqepxuVw=3Dw260" alt=3D"https://imgur.com=
+/Md9HSRW"></td></tr></table></div><table style=3D"color: #202124;font-famil=
+y: Roboto,Helvetica,Arial,sans-serif;font-size: 14px; font-weight: 400; lin=
+e-height: 20px;color: #70757a;margin-top: 8px; table-layout: fixed;"><tr><t=
+d><div role=3D"radio" aria-checked=3D"false" aria-label=3D"https://imgur.co=
+m/Md9HSRW" style=3D"border: solid 2px #9aa0a6; height: 16px; width: 16px; b=
+order-radius: 50%;"></div></td><td style=3D"min-width: 8px;"></td><td style=
+=3D"word-break: break-word;">https://imgur.com/Md9HSRW</td></tr></table></d=
+iv><div style=3D"box-sizing: border-box; display: inline-block; max-width: =
+100%; padding: 8px; vertical-align: top; width: 282px;"><div style=3D"borde=
+r-radius: 4px; border: solid 2px #f5f5f5; box-sizing: border-box; height: 2=
+11px; max-height: 100%; max-width: 100%; width: 266px;"><table style=3D"bor=
+der-collapse: collapse;"><tr><td style=3D"box-sizing: border-box; height: 2=
+07px; max-height: 100%; max-width: 100%; padding: 6px; text-align: center; =
+width: 262px;"><img style=3D"border: none; max-height: 100%; max-width: 100=
+%;" title=3D"https://imgur.com/nxICgY2" src=3D"https://lh3.googleuserconten=
+t.com/LeXWGAQiTShRh9Ra7VohRuTwhrPKiVWS0MSA-QZfHeTu2qN7kdrrILvdEtdc9WUvQySzW=
+tEIMRGYntANVw3TLSrNUAI5XfcKzzjbsxakl7V7bimHZ-48t1Zpn0SIElJptQ=3Dw260" alt=
+=3D"https://imgur.com/nxICgY2"></td></tr></table></div><table style=3D"colo=
+r: #202124;font-family: Roboto,Helvetica,Arial,sans-serif;font-size: 14px; =
+font-weight: 400; line-height: 20px;color: #70757a;margin-top: 8px; table-l=
+ayout: fixed;"><tr><td><div role=3D"radio" aria-checked=3D"false" aria-labe=
+l=3D"https://imgur.com/nxICgY2" style=3D"border: solid 2px #9aa0a6; height:=
+ 16px; width: 16px; border-radius: 50%;"></div></td><td style=3D"min-width:=
+ 8px;"></td><td style=3D"word-break: break-word;">https://imgur.com/nxICgY2=
+</td></tr></table></div><div style=3D"box-sizing: border-box; display: inli=
+ne-block; max-width: 100%; padding: 8px; vertical-align: top; width: 282px;=
+"><div style=3D"border-radius: 4px; border: solid 2px #f5f5f5; box-sizing: =
+border-box; height: 211px; max-height: 100%; max-width: 100%; width: 266px;=
+"><table style=3D"border-collapse: collapse;"><tr><td style=3D"box-sizing: =
+border-box; height: 207px; max-height: 100%; max-width: 100%; padding: 6px;=
+ text-align: center; width: 262px;"><img style=3D"border: none; max-height:=
+ 100%; max-width: 100%;" title=3D"https://imgur.com/Luk7IsG" src=3D"https:/=
+/lh5.googleusercontent.com/h5xKf5MVFaK6GKYEgPs2i1Qwps-OGPja5L18lPs8QdMi_klM=
+Q0e9ejWKsDOPwis86Of6nxM2mQxDXTQSq6GpiALp01xB-sPkQNKp6ZXgDbcN_P7E81881a8SJJy=
+ORayViA=3Dw260" alt=3D"https://imgur.com/Luk7IsG"></td></tr></table></div><=
+table style=3D"color: #202124;font-family: Roboto,Helvetica,Arial,sans-seri=
+f;font-size: 14px; font-weight: 400; line-height: 20px;color: #70757a;margi=
+n-top: 8px; table-layout: fixed;"><tr><td><div role=3D"radio" aria-checked=
+=3D"false" aria-label=3D"https://imgur.com/Luk7IsG" style=3D"border: solid =
+2px #9aa0a6; height: 16px; width: 16px; border-radius: 50%;"></div></td><td=
+ style=3D"min-width: 8px;"></td><td style=3D"word-break: break-word;">https=
+://imgur.com/Luk7IsG</td></tr></table></div></div></div><div style=3D"borde=
+r: 1px solid #dadce0; padding: 20px 12px;background-color: #fff; border-rad=
+ius: 8px; margin-bottom: 12px;margin-bottom: 12px;"><div style=3D"padding: =
+0 12px;"><h2 dir=3D"auto" style=3D"color: #202124;font-family: Roboto,Helve=
+tica,Arial,sans-serif;font-size: 16px; font-weight: 400; line-height: 24px;=
+white-space: pre-wrap;margin: 0 0 16px;">En funci=C3=B3n a la base de datos=
+ (<a href=3D"https://imgur.com/v8VnqEA">https://imgur.com/v8VnqEA</a>) dete=
+rmine que imprimir=C3=A1 de este programa (<a href=3D"https://imgur.com/KnM=
+Rgpw">https://imgur.com/KnMRgpw</a>).</h2><img style=3D"border: none; max-h=
+eight: 100%; max-width: 100%;" title=3D"" src=3D"https://lh6.googleusercont=
+ent.com/0ZfTkXr56RTI2THopc4A2kZM_bpoPgWtsYRFFj5dnbq4I7Eo9QB6zFmhDvM-J6fMjaQ=
+235YLKlqwnCr9rkNhvnEs_4N60OH6LW7dO1iBm--e9rL_eqQV2jIQe1tbqsoG1w=3Dw716" alt=
+=3D"Captionless Image"></div><div style=3D"padding: 0 12px;"><div style=3D"=
+box-sizing: border-box; display: inline-block; max-width: 100%; padding: 8p=
+x; vertical-align: top; width: 282px;"><div style=3D"border-radius: 4px; bo=
+rder: solid 2px #f5f5f5; box-sizing: border-box; height: 211px; max-height:=
+ 100%; max-width: 100%; width: 266px;"><table style=3D"border-collapse: col=
+lapse;"><tr><td style=3D"box-sizing: border-box; height: 207px; max-height:=
+ 100%; max-width: 100%; padding: 6px; text-align: center; width: 262px;"><i=
+mg style=3D"border: none; max-height: 100%; max-width: 100%;" title=3D"http=
+s://imgur.com/QmrVxhf" src=3D"https://lh4.googleusercontent.com/4kSItLLKONO=
+5nLZfZs8DTpqJJEuvetkwpa0XZ85eOsUFiOqoy-LESiNcp5d-U_k1SJGC8tDOgc2Cp9HS0mwLJe=
+hJBdjSUhI8SqT7GcNQmgbo0qvULLObrH-Cbwd8sg-Trg=3Dw157" alt=3D"https://imgur.c=
+om/QmrVxhf"></td></tr></table></div><table style=3D"color: #202124;font-fam=
+ily: Roboto,Helvetica,Arial,sans-serif;font-size: 14px; font-weight: 400; l=
+ine-height: 20px;color: #70757a;margin-top: 8px; table-layout: fixed;"><tr>=
+<td><div role=3D"radio" aria-checked=3D"false" aria-label=3D"https://imgur.=
+com/QmrVxhf" style=3D"border: solid 2px #9aa0a6; height: 16px; width: 16px;=
+ border-radius: 50%;"></div></td><td style=3D"min-width: 8px;"></td><td sty=
+le=3D"word-break: break-word;">https://imgur.com/QmrVxhf</td></tr></table><=
+/div><div style=3D"box-sizing: border-box; display: inline-block; max-width=
+: 100%; padding: 8px; vertical-align: top; width: 282px;"><div style=3D"bor=
+der-radius: 4px; border: solid 2px #f5f5f5; box-sizing: border-box; height:=
+ 211px; max-height: 100%; max-width: 100%; width: 266px;"><table style=3D"b=
+order-collapse: collapse;"><tr><td style=3D"box-sizing: border-box; height:=
+ 207px; max-height: 100%; max-width: 100%; padding: 6px; text-align: center=
+; width: 262px;"><img style=3D"border: none; max-height: 100%; max-width: 1=
+00%;" title=3D"https://imgur.com/Csd3bKl" src=3D"https://lh6.googleusercont=
+ent.com/Gbt2itDUG-3Vegr85iNWY6_1a38dE6Ri1RmGdg7bfMIyTnwBBoHNU33ShS4HeXq6RiV=
+DaQJORYvUnAKeLYWqO3xUp21-PlY0Ht6IuQY2xD3axhl45VQdN0cvRAgMnfn-fQ=3Dw260" alt=
+=3D"https://imgur.com/Csd3bKl"></td></tr></table></div><table style=3D"colo=
+r: #202124;font-family: Roboto,Helvetica,Arial,sans-serif;font-size: 14px; =
+font-weight: 400; line-height: 20px;color: #70757a;margin-top: 8px; table-l=
+ayout: fixed;"><tr><td><div role=3D"radio" aria-checked=3D"false" aria-labe=
+l=3D"https://imgur.com/Csd3bKl" style=3D"border: solid 2px #9aa0a6; height:=
+ 16px; width: 16px; border-radius: 50%;"></div></td><td style=3D"min-width:=
+ 8px;"></td><td style=3D"word-break: break-word;">https://imgur.com/Csd3bKl=
+</td></tr></table></div><div style=3D"box-sizing: border-box; display: inli=
+ne-block; max-width: 100%; padding: 8px; vertical-align: top; width: 282px;=
+"><div style=3D"border-radius: 4px; border: solid 2px #f5f5f5; box-sizing: =
+border-box; height: 211px; max-height: 100%; max-width: 100%; width: 266px;=
+"><table style=3D"border-collapse: collapse;"><tr><td style=3D"box-sizing: =
+border-box; height: 207px; max-height: 100%; max-width: 100%; padding: 6px;=
+ text-align: center; width: 262px;"><img style=3D"border: none; max-height:=
+ 100%; max-width: 100%;" title=3D"https://imgur.com/Dk2aUZy" src=3D"https:/=
+/lh3.googleusercontent.com/rzYb8X6vZf2PdPYpp7MpKpoaQ2thiiCNYb8VUxbAg3Mx_741=
+qM9O4wWlYvSaF5sw42slyy3FC-k1Hcc7tGLdmwVb2R8ygsAALz4fKgBQJJm7B9y11zmL9l0LHiH=
+u9p4FYQ=3Dw141" alt=3D"https://imgur.com/Dk2aUZy"></td></tr></table></div><=
+table style=3D"color: #202124;font-family: Roboto,Helvetica,Arial,sans-seri=
+f;font-size: 14px; font-weight: 400; line-height: 20px;color: #70757a;margi=
+n-top: 8px; table-layout: fixed;"><tr><td><div role=3D"radio" aria-checked=
+=3D"false" aria-label=3D"https://imgur.com/Dk2aUZy" style=3D"border: solid =
+2px #9aa0a6; height: 16px; width: 16px; border-radius: 50%;"></div></td><td=
+ style=3D"min-width: 8px;"></td><td style=3D"word-break: break-word;">https=
+://imgur.com/Dk2aUZy</td></tr></table></div><div style=3D"box-sizing: borde=
+r-box; display: inline-block; max-width: 100%; padding: 8px; vertical-align=
+: top; width: 282px;"><div style=3D"border-radius: 4px; border: solid 2px r=
+gb(103,58,183); box-sizing: border-box; height: 211px; max-height: 100%; ma=
+x-width: 100%; width: 266px;"><table style=3D"border-collapse: collapse;"><=
+tr><td style=3D"box-sizing: border-box; height: 207px; max-height: 100%; ma=
+x-width: 100%; padding: 6px; text-align: center; width: 262px;"><img style=
+=3D"border: none; max-height: 100%; max-width: 100%;" title=3D"https://imgu=
+r.com/uiGQMDj" src=3D"https://lh4.googleusercontent.com/1S0mH3xCUr8fmSiv09I=
+i3HreLRAx358lXFcFwm29_-Ly-nEfdpZAE_jJhydUpN6Y57KaS2yQZaVe4Zaspj7ZvJAOUzfnVU=
+aqWP55SNtSM6kALOR6ADrz2lVkh5BjM4cz2g=3Dw260" alt=3D"https://imgur.com/uiGQM=
+Dj"></td></tr></table></div><table style=3D"color: #202124;font-family: Rob=
+oto,Helvetica,Arial,sans-serif;font-size: 14px; font-weight: 400; line-heig=
+ht: 20px;margin-top: 8px; table-layout: fixed;"><tr><td><div role=3D"radio"=
+ aria-checked=3D"true" aria-label=3D"https://imgur.com/uiGQMDj" style=3D"bo=
+rder: solid 2px #5f6368; height: 16px; width: 16px; border-radius: 50%;"><d=
+iv style=3D"background-color: #5f6368; border: solid 5px #5f6368; border-ra=
+dius: 50%; margin: 3px; height: 0; width: 0;"></div></div></td><td style=3D=
+"min-width: 8px;"></td><td style=3D"word-break: break-word;">https://imgur.=
+com/uiGQMDj</td></tr></table></div><div style=3D"box-sizing: border-box; di=
+splay: inline-block; max-width: 100%; padding: 8px; vertical-align: top; wi=
+dth: 282px;"><div style=3D"border-radius: 4px; border: solid 2px #f5f5f5; b=
+ox-sizing: border-box; height: 211px; max-height: 100%; max-width: 100%; wi=
+dth: 266px;"><table style=3D"border-collapse: collapse;"><tr><td style=3D"b=
+ox-sizing: border-box; height: 207px; max-height: 100%; max-width: 100%; pa=
+dding: 6px; text-align: center; width: 262px;"><img style=3D"border: none; =
+max-height: 100%; max-width: 100%;" title=3D"https://imgur.com/8NqfwiY" src=
+=3D"https://lh5.googleusercontent.com/rVWUuWApx9Ur5GQo1s5UA2XWNXRySlcyFIYrU=
+04iQckZjTpN6cZPniTwceIEr8T2ZquBZLFKMeHcmdumC8Oqp4242M0sS7cPCSK_ll_zRVUYMtnV=
+naqde_I4MNmnSOFfHA=3Dw127" alt=3D"https://imgur.com/8NqfwiY"></td></tr></ta=
+ble></div><table style=3D"color: #202124;font-family: Roboto,Helvetica,Aria=
+l,sans-serif;font-size: 14px; font-weight: 400; line-height: 20px;color: #7=
+0757a;margin-top: 8px; table-layout: fixed;"><tr><td><div role=3D"radio" ar=
+ia-checked=3D"false" aria-label=3D"https://imgur.com/8NqfwiY" style=3D"bord=
+er: solid 2px #9aa0a6; height: 16px; width: 16px; border-radius: 50%;"></di=
+v></td><td style=3D"min-width: 8px;"></td><td style=3D"word-break: break-wo=
+rd;">https://imgur.com/8NqfwiY</td></tr></table></div></div></div><div styl=
+e=3D"border: 1px solid #dadce0; padding: 20px 12px;background-color: #fff; =
+border-radius: 8px; margin-bottom: 12px;margin-bottom: 12px;"><div style=3D=
+"padding: 0 12px;"><h2 dir=3D"auto" style=3D"color: #202124;font-family: Ro=
+boto,Helvetica,Arial,sans-serif;font-size: 16px; font-weight: 400; line-hei=
+ght: 24px;white-space: pre-wrap;margin: 0 0 16px;">En funci=C3=B3n a la bas=
+e de datos (<a href=3D"https://imgur.com/hVZIqwA">https://imgur.com/hVZIqwA=
+</a>) determine qu=C3=A9 imprimir=C3=A1 este programa (<a href=3D"https://i=
+mgur.com/2Ot45Lx">https://imgur.com/2Ot45Lx</a>).</h2><img style=3D"border:=
+ none; max-height: 100%; max-width: 100%;" title=3D"" src=3D"https://lh3.go=
+ogleusercontent.com/95Z4Uw3wGpDEEnrw-N2mbZb28tRkTlj4X1j-oYTuuFfGusD_BwsERry=
+BMR5UNBarUn4oDVu9GtYoy53k8uEBofWBv6JrwPdrctMoe_-QWxZ34D-Mye8WJ_X-OiYaKrRkGw=
+=3Dw426" alt=3D"Captionless Image"></div><div style=3D"padding: 0 12px;"><d=
+iv style=3D"box-sizing: border-box; display: inline-block; max-width: 100%;=
+ padding: 8px; vertical-align: top; width: 282px;"><div style=3D"border-rad=
+ius: 4px; border: solid 2px rgb(103,58,183); box-sizing: border-box; height=
+: 211px; max-height: 100%; max-width: 100%; width: 266px;"><table style=3D"=
+border-collapse: collapse;"><tr><td style=3D"box-sizing: border-box; height=
+: 207px; max-height: 100%; max-width: 100%; padding: 6px; text-align: cente=
+r; width: 262px;"><img style=3D"border: none; max-height: 100%; max-width: =
+100%;" title=3D"https://imgur.com/mrersTt" src=3D"https://lh5.googleusercon=
+tent.com/xAdHqLhdHOgdHNRA92eIi2NycmrFQJxwUSYldSUCuJEKdpsUrdZNO-fogl0wZlDrEF=
+-nSAlOB8rqxHGHkIpliSSLuT2q3v0NoY3py2PIULei41pILVMe5BBpbWeskfORcg=3Dw121" al=
+t=3D"https://imgur.com/mrersTt"></td></tr></table></div><table style=3D"col=
+or: #202124;font-family: Roboto,Helvetica,Arial,sans-serif;font-size: 14px;=
+ font-weight: 400; line-height: 20px;margin-top: 8px; table-layout: fixed;"=
+><tr><td><div role=3D"radio" aria-checked=3D"true" aria-label=3D"https://im=
+gur.com/mrersTt" style=3D"border: solid 2px #5f6368; height: 16px; width: 1=
+6px; border-radius: 50%;"><div style=3D"background-color: #5f6368; border: =
+solid 5px #5f6368; border-radius: 50%; margin: 3px; height: 0; width: 0;"><=
+/div></div></td><td style=3D"min-width: 8px;"></td><td style=3D"word-break:=
+ break-word;">https://imgur.com/mrersTt</td></tr></table></div><div style=
+=3D"box-sizing: border-box; display: inline-block; max-width: 100%; padding=
+: 8px; vertical-align: top; width: 282px;"><div style=3D"border-radius: 4px=
+; border: solid 2px #f5f5f5; box-sizing: border-box; height: 211px; max-hei=
+ght: 100%; max-width: 100%; width: 266px;"><table style=3D"border-collapse:=
+ collapse;"><tr><td style=3D"box-sizing: border-box; height: 207px; max-hei=
+ght: 100%; max-width: 100%; padding: 6px; text-align: center; width: 262px;=
+"><img style=3D"border: none; max-height: 100%; max-width: 100%;" title=3D"=
+https://imgur.com/shUiuPa" src=3D"https://lh3.googleusercontent.com/AWFnEnE=
+7Ry0bFp6Jq_-nyQiVNFb7RkEznbUIEUH6zrPcVoWqGpNFXJwmOWdNKtxrNrxTiTSb8oB9krGsJ6=
+aKR7s-MYV1ZG9mycqQ4U_jQlE2Ol3ooVJrMPAsEIdXVDeChg=3Dw131" alt=3D"https://img=
+ur.com/shUiuPa"></td></tr></table></div><table style=3D"color: #202124;font=
+-family: Roboto,Helvetica,Arial,sans-serif;font-size: 14px; font-weight: 40=
+0; line-height: 20px;color: #70757a;margin-top: 8px; table-layout: fixed;">=
+<tr><td><div role=3D"radio" aria-checked=3D"false" aria-label=3D"https://im=
+gur.com/shUiuPa" style=3D"border: solid 2px #9aa0a6; height: 16px; width: 1=
+6px; border-radius: 50%;"></div></td><td style=3D"min-width: 8px;"></td><td=
+ style=3D"word-break: break-word;">https://imgur.com/shUiuPa</td></tr></tab=
+le></div><div style=3D"box-sizing: border-box; display: inline-block; max-w=
+idth: 100%; padding: 8px; vertical-align: top; width: 282px;"><div style=3D=
+"border-radius: 4px; border: solid 2px #f5f5f5; box-sizing: border-box; hei=
+ght: 211px; max-height: 100%; max-width: 100%; width: 266px;"><table style=
+=3D"border-collapse: collapse;"><tr><td style=3D"box-sizing: border-box; he=
+ight: 207px; max-height: 100%; max-width: 100%; padding: 6px; text-align: c=
+enter; width: 262px;"><img style=3D"border: none; max-height: 100%; max-wid=
+th: 100%;" title=3D"https://imgur.com/WVTGILf" src=3D"https://lh4.googleuse=
+rcontent.com/BwQlIhHAxY4mnEPiLWS-B1GZSrGrt63YVPtE0Tgsql3wcuzA4vnjZIghdmnXBP=
+uAKhNDZe3jcZV-eg5EEhN8npLj9iOywjphg9GFOximVDqk5UvnzwOj2m0FTHLmgbvxAA=3Dw152=
+" alt=3D"https://imgur.com/WVTGILf"></td></tr></table></div><table style=3D=
+"color: #202124;font-family: Roboto,Helvetica,Arial,sans-serif;font-size: 1=
+4px; font-weight: 400; line-height: 20px;color: #70757a;margin-top: 8px; ta=
+ble-layout: fixed;"><tr><td><div role=3D"radio" aria-checked=3D"false" aria=
+-label=3D"https://imgur.com/WVTGILf" style=3D"border: solid 2px #9aa0a6; he=
+ight: 16px; width: 16px; border-radius: 50%;"></div></td><td style=3D"min-w=
+idth: 8px;"></td><td style=3D"word-break: break-word;">https://imgur.com/WV=
+TGILf</td></tr></table></div><div style=3D"box-sizing: border-box; display:=
+ inline-block; max-width: 100%; padding: 8px; vertical-align: top; width: 2=
+82px;"><div style=3D"border-radius: 4px; border: solid 2px #f5f5f5; box-siz=
+ing: border-box; height: 211px; max-height: 100%; max-width: 100%; width: 2=
+66px;"><table style=3D"border-collapse: collapse;"><tr><td style=3D"box-siz=
+ing: border-box; height: 207px; max-height: 100%; max-width: 100%; padding:=
+ 6px; text-align: center; width: 262px;"><img style=3D"border: none; max-he=
+ight: 100%; max-width: 100%;" title=3D"https://imgur.com/Z8zbAI7" src=3D"ht=
+tps://lh6.googleusercontent.com/1N0Wo0H1Y2_Ealmgqm6pjewUyHeyoJVAXPGgaFDPTJH=
+a-jLYSJZONB-YIcPHQ5eZIjUJz6MbXlQUcNWYOv_JNIIXmplKAgx5TZ3AhN_OqWaQcVH9ywIocM=
+Y0YSY1SYkuDA=3Dw134" alt=3D"https://imgur.com/Z8zbAI7"></td></tr></table></=
+div><table style=3D"color: #202124;font-family: Roboto,Helvetica,Arial,sans=
+-serif;font-size: 14px; font-weight: 400; line-height: 20px;color: #70757a;=
+margin-top: 8px; table-layout: fixed;"><tr><td><div role=3D"radio" aria-che=
+cked=3D"false" aria-label=3D"https://imgur.com/Z8zbAI7" style=3D"border: so=
+lid 2px #9aa0a6; height: 16px; width: 16px; border-radius: 50%;"></div></td=
+><td style=3D"min-width: 8px;"></td><td style=3D"word-break: break-word;">h=
+ttps://imgur.com/Z8zbAI7</td></tr></table></div><div style=3D"box-sizing: b=
+order-box; display: inline-block; max-width: 100%; padding: 8px; vertical-a=
+lign: top; width: 282px;"><div style=3D"border-radius: 4px; border: solid 2=
+px #f5f5f5; box-sizing: border-box; height: 211px; max-height: 100%; max-wi=
+dth: 100%; width: 266px;"><table style=3D"border-collapse: collapse;"><tr><=
+td style=3D"box-sizing: border-box; height: 207px; max-height: 100%; max-wi=
+dth: 100%; padding: 6px; text-align: center; width: 262px;"><img style=3D"b=
+order: none; max-height: 100%; max-width: 100%;" title=3D"https://imgur.com=
+/0n6vDud" src=3D"https://lh3.googleusercontent.com/MXsgIDQyIYP4W6ZxbQz08KMQ=
+Ox9FdNGEIqc0-g3d0QNcyjEgQ7ytUKGIa9ZmXEN_Y-M7LzDAyzKYLtJ55RAhVHNZmKSNGKNBBt8=
+txj9Y98pNo3ryzrMPwA4s7-Y4nqB7Dg=3Dw152" alt=3D"https://imgur.com/0n6vDud"><=
+/td></tr></table></div><table style=3D"color: #202124;font-family: Roboto,H=
+elvetica,Arial,sans-serif;font-size: 14px; font-weight: 400; line-height: 2=
+0px;color: #70757a;margin-top: 8px; table-layout: fixed;"><tr><td><div role=
+=3D"radio" aria-checked=3D"false" aria-label=3D"https://imgur.com/0n6vDud" =
+style=3D"border: solid 2px #9aa0a6; height: 16px; width: 16px; border-radiu=
+s: 50%;"></div></td><td style=3D"min-width: 8px;"></td><td style=3D"word-br=
+eak: break-word;">https://imgur.com/0n6vDud</td></tr></table></div></div></=
+div><div style=3D"border: 1px solid #dadce0; padding: 20px 12px;background-=
+color: #fff; border-radius: 8px; margin-bottom: 12px;margin-bottom: 12px;">=
+<div style=3D"padding: 0 12px;"><h2 dir=3D"auto" style=3D"color: #202124;fo=
+nt-family: Roboto,Helvetica,Arial,sans-serif;font-size: 16px; font-weight: =
+400; line-height: 24px;white-space: pre-wrap;margin: 0 0 16px;">En funci=C3=
+=B3n a la base de datos (<a href=3D"https://imgur.com/5CQ39A1">https://imgu=
+r.com/5CQ39A1</a>) determine qu=C3=A9 imprimir=C3=A1 este programa (<a href=
+=3D"https://imgur.com/iu37Huz">https://imgur.com/iu37Huz</a>).</h2><img sty=
+le=3D"border: none; max-height: 100%; max-width: 100%;" title=3D"" src=3D"h=
+ttps://lh5.googleusercontent.com/7h-GgKg0SfzYF47jQeozSx8uwBbkpuYHIRd3N_GbSx=
+HqdTpWmyCYdVZIoNqnLnZVBTCtz4pTQL9vgqOSkm6ar27YnJrwRrxFGHAln53xbT2QtOF5Cw0rf=
+fH7PRwG89289A=3Dw733" alt=3D"Captionless Image"></div><div style=3D"padding=
+: 0 12px;"><div style=3D"box-sizing: border-box; display: inline-block; max=
+-width: 100%; padding: 8px; vertical-align: top; width: 282px;"><div style=
+=3D"border-radius: 4px; border: solid 2px #f5f5f5; box-sizing: border-box; =
+height: 211px; max-height: 100%; max-width: 100%; width: 266px;"><table sty=
+le=3D"border-collapse: collapse;"><tr><td style=3D"box-sizing: border-box; =
+height: 207px; max-height: 100%; max-width: 100%; padding: 6px; text-align:=
+ center; width: 262px;"><img style=3D"border: none; max-height: 100%; max-w=
+idth: 100%;" title=3D"https://imgur.com/dPKCnSe" src=3D"https://lh3.googleu=
+sercontent.com/m8-KypvjtNsi4cgRXI3jbb70RicHBxlMnLiMnYBrNbdRnisjygkYjWT5FoGy=
+R-afMG_e1WwjG1n9MnQS2TwbxHUS14Tm8dBKPEeI5nearI6AxdFyvzxjdoMHAZgfk0CQAA=3Dw1=
+87" alt=3D"https://imgur.com/dPKCnSe"></td></tr></table></div><table style=
+=3D"color: #202124;font-family: Roboto,Helvetica,Arial,sans-serif;font-size=
+: 14px; font-weight: 400; line-height: 20px;color: #70757a;margin-top: 8px;=
+ table-layout: fixed;"><tr><td><div role=3D"radio" aria-checked=3D"false" a=
+ria-label=3D"https://imgur.com/dPKCnSe" style=3D"border: solid 2px #9aa0a6;=
+ height: 16px; width: 16px; border-radius: 50%;"></div></td><td style=3D"mi=
+n-width: 8px;"></td><td style=3D"word-break: break-word;">https://imgur.com=
+/dPKCnSe</td></tr></table></div><div style=3D"box-sizing: border-box; displ=
+ay: inline-block; max-width: 100%; padding: 8px; vertical-align: top; width=
+: 282px;"><div style=3D"border-radius: 4px; border: solid 2px #f5f5f5; box-=
+sizing: border-box; height: 211px; max-height: 100%; max-width: 100%; width=
+: 266px;"><table style=3D"border-collapse: collapse;"><tr><td style=3D"box-=
+sizing: border-box; height: 207px; max-height: 100%; max-width: 100%; paddi=
+ng: 6px; text-align: center; width: 262px;"><img style=3D"border: none; max=
+-height: 100%; max-width: 100%;" title=3D"https://imgur.com/6ZSw67J" src=3D=
+"https://lh6.googleusercontent.com/lOwnYOrXJfKkRid9E_wD7MoQFTLZf_12hc2zH02O=
+snDx_MTLCvodtMg07E9W_RINJjXTbI39qFWWyFZ9OdQyMvLDD8yoKF6M9wH4dPtxiucQgCo7uQ9=
+3A1waeMvqNDng5g=3Dw188" alt=3D"https://imgur.com/6ZSw67J"></td></tr></table=
+></div><table style=3D"color: #202124;font-family: Roboto,Helvetica,Arial,s=
+ans-serif;font-size: 14px; font-weight: 400; line-height: 20px;color: #7075=
+7a;margin-top: 8px; table-layout: fixed;"><tr><td><div role=3D"radio" aria-=
+checked=3D"false" aria-label=3D"https://imgur.com/6ZSw67J" style=3D"border:=
+ solid 2px #9aa0a6; height: 16px; width: 16px; border-radius: 50%;"></div><=
+/td><td style=3D"min-width: 8px;"></td><td style=3D"word-break: break-word;=
+">https://imgur.com/6ZSw67J</td></tr></table></div><div style=3D"box-sizing=
+: border-box; display: inline-block; max-width: 100%; padding: 8px; vertica=
+l-align: top; width: 282px;"><div style=3D"border-radius: 4px; border: soli=
+d 2px #f5f5f5; box-sizing: border-box; height: 211px; max-height: 100%; max=
+-width: 100%; width: 266px;"><table style=3D"border-collapse: collapse;"><t=
+r><td style=3D"box-sizing: border-box; height: 207px; max-height: 100%; max=
+-width: 100%; padding: 6px; text-align: center; width: 262px;"><img style=
+=3D"border: none; max-height: 100%; max-width: 100%;" title=3D"https://imgu=
+r.com/bcu199J" src=3D"https://lh3.googleusercontent.com/qBfGPHf5VtzzK6I5_eq=
+OOL7A--X5ezZz-Ou7BWXTUKoWUvLCEULx3cSOul_5xaj9ZUs4KPTnbOFZoCSVY5ph3Vjmejns_X=
+BRJIkKyHf34Ut14absfHA-3LZo5MjdB_1YMg=3Dw170" alt=3D"https://imgur.com/bcu19=
+9J"></td></tr></table></div><table style=3D"color: #202124;font-family: Rob=
+oto,Helvetica,Arial,sans-serif;font-size: 14px; font-weight: 400; line-heig=
+ht: 20px;color: #70757a;margin-top: 8px; table-layout: fixed;"><tr><td><div=
+ role=3D"radio" aria-checked=3D"false" aria-label=3D"https://imgur.com/bcu1=
+99J" style=3D"border: solid 2px #9aa0a6; height: 16px; width: 16px; border-=
+radius: 50%;"></div></td><td style=3D"min-width: 8px;"></td><td style=3D"wo=
+rd-break: break-word;">https://imgur.com/bcu199J</td></tr></table></div><di=
+v style=3D"box-sizing: border-box; display: inline-block; max-width: 100%; =
+padding: 8px; vertical-align: top; width: 282px;"><div style=3D"border-radi=
+us: 4px; border: solid 2px #f5f5f5; box-sizing: border-box; height: 211px; =
+max-height: 100%; max-width: 100%; width: 266px;"><table style=3D"border-co=
+llapse: collapse;"><tr><td style=3D"box-sizing: border-box; height: 207px; =
+max-height: 100%; max-width: 100%; padding: 6px; text-align: center; width:=
+ 262px;"><img style=3D"border: none; max-height: 100%; max-width: 100%;" ti=
+tle=3D"https://imgur.com/M67wD2q" src=3D"https://lh4.googleusercontent.com/=
+gIbUgJ8GzTWDeoIAuTHKdIB1uEUyQBEbezEhrrtmGr0nEitR6RQPGTOqh7WjAB4K-gMDf1UmQUA=
+PJhz0Q6ygZVA6MiPK4Wd8AXE6UdUw251AJ8IKNTxkHr1TgN_TOTxU6g=3Dw160" alt=3D"http=
+s://imgur.com/M67wD2q"></td></tr></table></div><table style=3D"color: #2021=
+24;font-family: Roboto,Helvetica,Arial,sans-serif;font-size: 14px; font-wei=
+ght: 400; line-height: 20px;color: #70757a;margin-top: 8px; table-layout: f=
+ixed;"><tr><td><div role=3D"radio" aria-checked=3D"false" aria-label=3D"htt=
+ps://imgur.com/M67wD2q" style=3D"border: solid 2px #9aa0a6; height: 16px; w=
+idth: 16px; border-radius: 50%;"></div></td><td style=3D"min-width: 8px;"><=
+/td><td style=3D"word-break: break-word;">https://imgur.com/M67wD2q</td></t=
+r></table></div><div style=3D"box-sizing: border-box; display: inline-block=
+; max-width: 100%; padding: 8px; vertical-align: top; width: 282px;"><div s=
+tyle=3D"border-radius: 4px; border: solid 2px rgb(103,58,183); box-sizing: =
+border-box; height: 211px; max-height: 100%; max-width: 100%; width: 266px;=
+"><table style=3D"border-collapse: collapse;"><tr><td style=3D"box-sizing: =
+border-box; height: 207px; max-height: 100%; max-width: 100%; padding: 6px;=
+ text-align: center; width: 262px;"><img style=3D"border: none; max-height:=
+ 100%; max-width: 100%;" title=3D"https://imgur.com/sz0okJI" src=3D"https:/=
+/lh6.googleusercontent.com/BBGGjDeYRkgltEYlPIWT4Xz1AygNQJO1VP0VesySbgRTngLd=
+wpsFuzl-0bOoJV5k00VXvkxDUJhHlOAOuJNVV4dbHumzMhvrTmhy9lImdwP6gbC4X0GZhigqviw=
+qmDYdsA=3Dw179" alt=3D"https://imgur.com/sz0okJI"></td></tr></table></div><=
+table style=3D"color: #202124;font-family: Roboto,Helvetica,Arial,sans-seri=
+f;font-size: 14px; font-weight: 400; line-height: 20px;margin-top: 8px; tab=
+le-layout: fixed;"><tr><td><div role=3D"radio" aria-checked=3D"true" aria-l=
+abel=3D"https://imgur.com/sz0okJI" style=3D"border: solid 2px #5f6368; heig=
+ht: 16px; width: 16px; border-radius: 50%;"><div style=3D"background-color:=
+ #5f6368; border: solid 5px #5f6368; border-radius: 50%; margin: 3px; heigh=
+t: 0; width: 0;"></div></div></td><td style=3D"min-width: 8px;"></td><td st=
+yle=3D"word-break: break-word;">https://imgur.com/sz0okJI</td></tr></table>=
+</div></div></div><div style=3D"border: 1px solid #dadce0; padding: 20px 12=
+px;background-color: #fff; border-radius: 8px; margin-bottom: 12px;margin-b=
+ottom: 12px;"><div style=3D"padding: 0 12px;"><h2 dir=3D"auto" style=3D"col=
+or: #202124;font-family: Roboto,Helvetica,Arial,sans-serif;font-size: 16px;=
+ font-weight: 400; line-height: 24px;white-space: pre-wrap;margin: 0 0 16px=
+;">Un docente del ITBA tiene en un archivo .xlsx las notas de sus alumnos. =
+=C2=A0Las columnas del archivo son &#39;Legajo&#39;, &#39;Cursada&#39; y &#=
+39;Final&#39;. El docente desea ordenar su archivo tal que las notas de fin=
+ales aparezcan en forma descendiente con notas de cursada ascendiente para =
+cada grupo de notas de finales. =C2=A0A continuaci=C3=B3n se adjunta una ca=
+ptura de c=C3=B3mo se deber=C3=ADa ver el dataframe antes y despu=C3=A9s de=
+ ordenarlo. Indique cu=C3=A1l ser=C3=ADa la forma m=C3=A1s conveniente de u=
+sar .sort_values().<span style=3D"color: #d93025;" aria-label=3D"Required q=
+uestion"> *</span></h2><img style=3D"border: none; max-height: 100%; max-wi=
+dth: 100%;" title=3D"" src=3D"https://lh6.googleusercontent.com/MYmDK3LhO4i=
+0N0RYTQrRVIdPtpdMJ4anqsz3D_QO3QcJIB52OdYFccJ5tjwd20SY6DtBemjzqRmdfm8kRCcXzF=
+YLS8cnNzi1HgsiE-AhIdthSiy1c54RTFT9pSZNAkRAvw=3Dw231" alt=3D"Captionless Ima=
+ge"></div><div style=3D"padding: 0 12px;"><div style=3D"margin-top: 16px;">=
+<table style=3D"color: #202124;font-family: Roboto,Helvetica,Arial,sans-ser=
+if;font-size: 14px; font-weight: 400; line-height: 20px;color: #70757a;marg=
+in-top: 8px; table-layout: fixed;"><tr><td><div role=3D"radio" aria-checked=
+=3D"false" aria-label=3D"df.sort_values(by =3D [&#39;Cursada&#39;, &#39;Fin=
+al&#39;], ascending =3D False)" style=3D"border: solid 2px #9aa0a6; height:=
+ 16px; width: 16px; border-radius: 50%;"></div></td><td style=3D"min-width:=
+ 8px;"></td><td style=3D"word-break: break-word;">df.sort_values(by =3D [&#=
+39;Cursada&#39;, &#39;Final&#39;], ascending =3D False)</td></tr></table></=
+div><div style=3D"margin-top: 16px;"><table style=3D"color: #202124;font-fa=
+mily: Roboto,Helvetica,Arial,sans-serif;font-size: 14px; font-weight: 400; =
+line-height: 20px;margin-top: 8px; table-layout: fixed;"><tr><td><div role=
+=3D"radio" aria-checked=3D"true" aria-label=3D"df.sort_values(by =3D [&#39;=
+Final&#39;, &#39;Cursada&#39;], ascending =3D [True, False])" style=3D"bord=
+er: solid 2px #5f6368; height: 16px; width: 16px; border-radius: 50%;"><div=
+ style=3D"background-color: #5f6368; border: solid 5px #5f6368; border-radi=
+us: 50%; margin: 3px; height: 0; width: 0;"></div></div></td><td style=3D"m=
+in-width: 8px;"></td><td style=3D"word-break: break-word;">df.sort_values(b=
+y =3D [&#39;Final&#39;, &#39;Cursada&#39;], ascending =3D [True, False])</t=
+d></tr></table></div><div style=3D"margin-top: 16px;"><table style=3D"color=
+: #202124;font-family: Roboto,Helvetica,Arial,sans-serif;font-size: 14px; f=
+ont-weight: 400; line-height: 20px;color: #70757a;margin-top: 8px; table-la=
+yout: fixed;"><tr><td><div role=3D"radio" aria-checked=3D"false" aria-label=
+=3D"df.sort_values(by =3D [&#39;Final&#39;] + [&#39;Cursada&#39;], ascendin=
+g =3D [False, True])" style=3D"border: solid 2px #9aa0a6; height: 16px; wid=
+th: 16px; border-radius: 50%;"></div></td><td style=3D"min-width: 8px;"></t=
+d><td style=3D"word-break: break-word;">df.sort_values(by =3D [&#39;Final&#=
+39;] + [&#39;Cursada&#39;], ascending =3D [False, True])</td></tr></table><=
+/div><div style=3D"margin-top: 16px;"><table style=3D"color: #202124;font-f=
+amily: Roboto,Helvetica,Arial,sans-serif;font-size: 14px; font-weight: 400;=
+ line-height: 20px;color: #70757a;margin-top: 8px; table-layout: fixed;"><t=
+r><td><div role=3D"radio" aria-checked=3D"false" aria-label=3D"df.sort_valu=
+es(by =3D [&#39;Cursada&#39;] + [&#39;Final&#39;], ascending =3D [True, Fal=
+se])" style=3D"border: solid 2px #9aa0a6; height: 16px; width: 16px; border=
+-radius: 50%;"></div></td><td style=3D"min-width: 8px;"></td><td style=3D"w=
+ord-break: break-word;">df.sort_values(by =3D [&#39;Cursada&#39;] + [&#39;F=
+inal&#39;], ascending =3D [True, False])</td></tr></table></div></div></div=
+><div style=3D"border: 1px solid #dadce0; padding: 20px 12px;background-col=
+or: #fff; border-radius: 8px; margin-bottom: 12px;margin-bottom: 12px;"><di=
+v style=3D"padding: 0 12px;"><h2 dir=3D"auto" style=3D"color: #202124;font-=
+family: Roboto,Helvetica,Arial,sans-serif;font-size: 16px; font-weight: 400=
+; line-height: 24px;white-space: pre-wrap;margin: 0 0 16px;">=C2=BFCu=C3=A1=
+l de estas opciones permite modificar la paleta de colores que se utiliza e=
+n un gr=C3=A1fico de superficie tridimensional creado usando la instrucci=
+=C3=B3n plot_surface?</h2><img style=3D"border: none; max-height: 100%; max=
+-width: 100%;" title=3D"" src=3D"https://lh3.googleusercontent.com/conBZOiZ=
+3OHqaLgh4F7SX9SkieThou0-OpYboNCA7JbuCg7pzLn2C0kCf0-dPdkYmbJPfDyi16ltdEahlVJ=
+KVYeSgG__9ohIOxiVZYQ7B08BqnOXx0WQC2Q-WvD83eybYA=3Dw740" alt=3D"Captionless =
+Image"></div><div style=3D"padding: 0 12px;"><div style=3D"margin-top: 16px=
+;"><table style=3D"color: #202124;font-family: Roboto,Helvetica,Arial,sans-=
+serif;font-size: 14px; font-weight: 400; line-height: 20px;color: #70757a;m=
+argin-top: 8px; table-layout: fixed;"><tr><td><div role=3D"radio" aria-chec=
+ked=3D"false" aria-label=3D"Seleccionando uno de los style sheets inclu=C3=
+=ADdos en matplotlib mediante la instrucci=C3=B3n plt.style.use" style=3D"b=
+order: solid 2px #9aa0a6; height: 16px; width: 16px; border-radius: 50%;"><=
+/div></td><td style=3D"min-width: 8px;"></td><td style=3D"word-break: break=
+-word;">Seleccionando uno de los style sheets inclu=C3=ADdos en matplotlib =
+mediante la instrucci=C3=B3n plt.style.use</td></tr></table></div><div styl=
+e=3D"margin-top: 16px;"><table style=3D"color: #202124;font-family: Roboto,=
+Helvetica,Arial,sans-serif;font-size: 14px; font-weight: 400; line-height: =
+20px;color: #70757a;margin-top: 8px; table-layout: fixed;"><tr><td><div rol=
+e=3D"radio" aria-checked=3D"false" aria-label=3D"Asignando un valor al par=
+=C3=A1metro fillstyle de la instrucci=C3=B3n plot_surface" style=3D"border:=
+ solid 2px #9aa0a6; height: 16px; width: 16px; border-radius: 50%;"></div><=
+/td><td style=3D"min-width: 8px;"></td><td style=3D"word-break: break-word;=
+">Asignando un valor al par=C3=A1metro fillstyle de la instrucci=C3=B3n plo=
+t_surface</td></tr></table></div><div style=3D"margin-top: 16px;"><table st=
+yle=3D"color: #202124;font-family: Roboto,Helvetica,Arial,sans-serif;font-s=
+ize: 14px; font-weight: 400; line-height: 20px;color: #70757a;margin-top: 8=
+px; table-layout: fixed;"><tr><td><div role=3D"radio" aria-checked=3D"false=
+" aria-label=3D"Asignando un valor al par=C3=A1metro color de la instrucci=
+=C3=B3n plot_surface" style=3D"border: solid 2px #9aa0a6; height: 16px; wid=
+th: 16px; border-radius: 50%;"></div></td><td style=3D"min-width: 8px;"></t=
+d><td style=3D"word-break: break-word;">Asignando un valor al par=C3=A1metr=
+o color de la instrucci=C3=B3n plot_surface</td></tr></table></div><div sty=
+le=3D"margin-top: 16px;"><table style=3D"color: #202124;font-family: Roboto=
+,Helvetica,Arial,sans-serif;font-size: 14px; font-weight: 400; line-height:=
+ 20px;margin-top: 8px; table-layout: fixed;"><tr><td><div role=3D"radio" ar=
+ia-checked=3D"true" aria-label=3D"Asignando un valor al par=C3=A1metro cmap=
+ de la instrucci=C3=B3n plot_surface" style=3D"border: solid 2px #5f6368; h=
+eight: 16px; width: 16px; border-radius: 50%;"><div style=3D"background-col=
+or: #5f6368; border: solid 5px #5f6368; border-radius: 50%; margin: 3px; he=
+ight: 0; width: 0;"></div></div></td><td style=3D"min-width: 8px;"></td><td=
+ style=3D"word-break: break-word;">Asignando un valor al par=C3=A1metro cma=
+p de la instrucci=C3=B3n plot_surface</td></tr></table></div></div></div><d=
+iv style=3D"border: 1px solid #dadce0; padding: 20px 12px;background-color:=
+ #fff; border-radius: 8px; margin-bottom: 12px;margin-bottom: 12px;"><div s=
+tyle=3D"padding: 0 12px;"><h2 dir=3D"auto" style=3D"color: #202124;font-fam=
+ily: Roboto,Helvetica,Arial,sans-serif;font-size: 16px; font-weight: 400; l=
+ine-height: 24px;white-space: pre-wrap;margin: 0 0 16px;">Luego de finaliza=
+r la inscripci=C3=B3n a un evento se quiere analizar los datos de la misma,=
+ para ello la informaci=C3=B3n del formulario fue exportada a un archivo y =
+se quiere usar este simple c=C3=B3digo para analizar el dominio de correo e=
+lectr=C3=B3nico m=C3=A1s utilizado =C2=BFCu=C3=A1l de los siguientes gr=C3=
+=A1ficos fue generado usando este programa?</h2><img style=3D"border: none;=
+ max-height: 100%; max-width: 100%;" title=3D"" src=3D"https://lh6.googleus=
+ercontent.com/SFbKy0p2G4SGehDSQn37e5-T6ctBypkubQpexq77x6U52nqgfNuXWav_5VkM3=
+KTMaTralyL4it6pDRzFRvS8T77CVkSCDAEyZODqwlYnqypoPK1-yA5d_xeor1VUutVYSw=3Dw74=
+0" alt=3D"Captionless Image"></div><div style=3D"padding: 0 12px;"><div sty=
+le=3D"box-sizing: border-box; display: inline-block; max-width: 100%; paddi=
+ng: 8px; vertical-align: top; width: 282px;"><div style=3D"border-radius: 4=
+px; border: solid 2px #f5f5f5; box-sizing: border-box; height: 211px; max-h=
+eight: 100%; max-width: 100%; width: 266px;"><table style=3D"border-collaps=
+e: collapse;"><tr><td style=3D"box-sizing: border-box; height: 207px; max-h=
+eight: 100%; max-width: 100%; padding: 6px; text-align: center; width: 262p=
+x;"><img style=3D"border: none; max-height: 100%; max-width: 100%;" title=
+=3D"https://imgur.com/a/iG1cyab" src=3D"https://lh4.googleusercontent.com/F=
+LqxX0KNwPBkr1a5Xr6naM3YB5pQe8KXAjIVbXthUqBqcFwieCr7XSXAv_XoIJSWzkN7kQQsReCG=
+I7UU0z09lbBBHHeqkaiNng1Qema0-tPb3J4ydCLiuX7CEgitC6NfdA=3Dw260" alt=3D"https=
+://imgur.com/a/iG1cyab"></td></tr></table></div><table style=3D"color: #202=
+124;font-family: Roboto,Helvetica,Arial,sans-serif;font-size: 14px; font-we=
+ight: 400; line-height: 20px;color: #70757a;margin-top: 8px; table-layout: =
+fixed;"><tr><td><div role=3D"radio" aria-checked=3D"false" aria-label=3D"ht=
+tps://imgur.com/a/iG1cyab" style=3D"border: solid 2px #9aa0a6; height: 16px=
+; width: 16px; border-radius: 50%;"></div></td><td style=3D"min-width: 8px;=
+"></td><td style=3D"word-break: break-word;">https://imgur.com/a/iG1cyab</t=
+d></tr></table></div><div style=3D"box-sizing: border-box; display: inline-=
+block; max-width: 100%; padding: 8px; vertical-align: top; width: 282px;"><=
+div style=3D"border-radius: 4px; border: solid 2px #f5f5f5; box-sizing: bor=
+der-box; height: 211px; max-height: 100%; max-width: 100%; width: 266px;"><=
+table style=3D"border-collapse: collapse;"><tr><td style=3D"box-sizing: bor=
+der-box; height: 207px; max-height: 100%; max-width: 100%; padding: 6px; te=
+xt-align: center; width: 262px;"><img style=3D"border: none; max-height: 10=
+0%; max-width: 100%;" title=3D"https://imgur.com/a/CNNmlNs" src=3D"https://=
+lh3.googleusercontent.com/Sj5iVOFD823Ql0_5S7sZ1xlkd7nh9PvHvYSRtlhd-mJyPN379=
+fVet_nCsJWf3i-7g16NXXdCheUsMxuNQoRPQhqjMxw8UmoRO4vUTu01PWkFFLQDtCh6B3ltG-rg=
+18v4Zg=3Dw260" alt=3D"https://imgur.com/a/CNNmlNs"></td></tr></table></div>=
+<table style=3D"color: #202124;font-family: Roboto,Helvetica,Arial,sans-ser=
+if;font-size: 14px; font-weight: 400; line-height: 20px;color: #70757a;marg=
+in-top: 8px; table-layout: fixed;"><tr><td><div role=3D"radio" aria-checked=
+=3D"false" aria-label=3D"https://imgur.com/a/CNNmlNs" style=3D"border: soli=
+d 2px #9aa0a6; height: 16px; width: 16px; border-radius: 50%;"></div></td><=
+td style=3D"min-width: 8px;"></td><td style=3D"word-break: break-word;">htt=
+ps://imgur.com/a/CNNmlNs</td></tr></table></div><div style=3D"box-sizing: b=
+order-box; display: inline-block; max-width: 100%; padding: 8px; vertical-a=
+lign: top; width: 282px;"><div style=3D"border-radius: 4px; border: solid 2=
+px #f5f5f5; box-sizing: border-box; height: 211px; max-height: 100%; max-wi=
+dth: 100%; width: 266px;"><table style=3D"border-collapse: collapse;"><tr><=
+td style=3D"box-sizing: border-box; height: 207px; max-height: 100%; max-wi=
+dth: 100%; padding: 6px; text-align: center; width: 262px;"><img style=3D"b=
+order: none; max-height: 100%; max-width: 100%;" title=3D"https://imgur.com=
+/a/5g5IlBD" src=3D"https://lh3.googleusercontent.com/N3uJhkLAXY9cL-JetDxVTA=
+9q9vPP427RaFNQ4swo8H4FuU5sY7xZrM-xoY_gArlt8j1Ds3RE3BRh4o9ir1RsRDh9gXeRy6W_p=
+UL5PJfCa1zShxopvn1ylleMtbPJMzdykg=3Dw260" alt=3D"https://imgur.com/a/5g5IlB=
+D"></td></tr></table></div><table style=3D"color: #202124;font-family: Robo=
+to,Helvetica,Arial,sans-serif;font-size: 14px; font-weight: 400; line-heigh=
+t: 20px;color: #70757a;margin-top: 8px; table-layout: fixed;"><tr><td><div =
+role=3D"radio" aria-checked=3D"false" aria-label=3D"https://imgur.com/a/5g5=
+IlBD" style=3D"border: solid 2px #9aa0a6; height: 16px; width: 16px; border=
+-radius: 50%;"></div></td><td style=3D"min-width: 8px;"></td><td style=3D"w=
+ord-break: break-word;">https://imgur.com/a/5g5IlBD</td></tr></table></div>=
+<div style=3D"box-sizing: border-box; display: inline-block; max-width: 100=
+%; padding: 8px; vertical-align: top; width: 282px;"><div style=3D"border-r=
+adius: 4px; border: solid 2px rgb(103,58,183); box-sizing: border-box; heig=
+ht: 211px; max-height: 100%; max-width: 100%; width: 266px;"><table style=
+=3D"border-collapse: collapse;"><tr><td style=3D"box-sizing: border-box; he=
+ight: 207px; max-height: 100%; max-width: 100%; padding: 6px; text-align: c=
+enter; width: 262px;"><img style=3D"border: none; max-height: 100%; max-wid=
+th: 100%;" title=3D"https://imgur.com/a/Zhyo1Ak" src=3D"https://lh6.googleu=
+sercontent.com/QLNYY2s7-euOmHFhW8j7W9pB1qwJcKhyhuGMv1MoIAKz-IE8jzGp3vtKvFmw=
+9kjlZ1DwkFKrcohl-hd6IqL5ZqAkkI0VP7tS7rHbwuLcXd6Knb-RfU6jYVp-0yC9951x7g=3Dw2=
+60" alt=3D"https://imgur.com/a/Zhyo1Ak"></td></tr></table></div><table styl=
+e=3D"color: #202124;font-family: Roboto,Helvetica,Arial,sans-serif;font-siz=
+e: 14px; font-weight: 400; line-height: 20px;margin-top: 8px; table-layout:=
+ fixed;"><tr><td><div role=3D"radio" aria-checked=3D"true" aria-label=3D"ht=
+tps://imgur.com/a/Zhyo1Ak" style=3D"border: solid 2px #5f6368; height: 16px=
+; width: 16px; border-radius: 50%;"><div style=3D"background-color: #5f6368=
+; border: solid 5px #5f6368; border-radius: 50%; margin: 3px; height: 0; wi=
+dth: 0;"></div></div></td><td style=3D"min-width: 8px;"></td><td style=3D"w=
+ord-break: break-word;">https://imgur.com/a/Zhyo1Ak</td></tr></table></div>=
+<div style=3D"box-sizing: border-box; display: inline-block; max-width: 100=
+%; padding: 8px; vertical-align: top; width: 282px;"><div style=3D"border-r=
+adius: 4px; border: solid 2px #f5f5f5; box-sizing: border-box; height: 211p=
+x; max-height: 100%; max-width: 100%; width: 266px;"><table style=3D"border=
+-collapse: collapse;"><tr><td style=3D"box-sizing: border-box; height: 207p=
+x; max-height: 100%; max-width: 100%; padding: 6px; text-align: center; wid=
+th: 262px;"><img style=3D"border: none; max-height: 100%; max-width: 100%;"=
+ title=3D"https://imgur.com/a/F5K9YJ2" src=3D"https://lh5.googleusercontent=
+.com/WN1iYOLCJHzV_aJm9iPfUbrXC-nzfIw6aKifSK3ZUjVwvOUva9W1QE6-T8wDLxbuKuA5f6=
+DuUyBsWyIgmh3U0__80vbSJMeVWCQ23xsqLQG6LYqcwyuNoZ8pyTrJmoxHBw=3Dw260" alt=3D=
+"https://imgur.com/a/F5K9YJ2"></td></tr></table></div><table style=3D"color=
+: #202124;font-family: Roboto,Helvetica,Arial,sans-serif;font-size: 14px; f=
+ont-weight: 400; line-height: 20px;color: #70757a;margin-top: 8px; table-la=
+yout: fixed;"><tr><td><div role=3D"radio" aria-checked=3D"false" aria-label=
+=3D"https://imgur.com/a/F5K9YJ2" style=3D"border: solid 2px #9aa0a6; height=
+: 16px; width: 16px; border-radius: 50%;"></div></td><td style=3D"min-width=
+: 8px;"></td><td style=3D"word-break: break-word;">https://imgur.com/a/F5K9=
+YJ2</td></tr></table></div></div></div><div style=3D"border: 1px solid #dad=
+ce0; padding: 20px 12px;background-color: #fff; border-radius: 8px; margin-=
+bottom: 12px;margin-bottom: 12px;"><div style=3D"padding: 0 12px;"><h2 dir=
+=3D"auto" style=3D"color: #202124;font-family: Roboto,Helvetica,Arial,sans-=
+serif;font-size: 16px; font-weight: 400; line-height: 24px;white-space: pre=
+-wrap;margin: 0 0 16px;">Un programa de Python que utiliza funciones de mat=
+plotlib no lanz=C3=B3 ning=C3=BAn error cuando se intent=C3=B3 ejecutar, si=
+n embargo el gr=C3=A1fico que fue generado tiene un problema: es una imagen=
+ completamente en blanco =C2=BFCu=C3=A1l es la causa del problema?</h2><img=
+ style=3D"border: none; max-height: 100%; max-width: 100%;" title=3D"" src=
+=3D"https://lh6.googleusercontent.com/8L_R1KrOtLkDhFVwk9hPLsMMHuOsQ-tBDG2w7=
+BXaJeN4kU9PKXIdtiYWEcE8CKDz0aRWBqX6qIDzpThEE1f7hCmCcEkxzSfe2Ny1jOdmT6QZj88O=
+Wb4UtiaLHz3uUygCQw=3Dw460" alt=3D"Captionless Image"></div><div style=3D"pa=
+dding: 0 12px;"><div style=3D"margin-top: 16px;"><table style=3D"color: #20=
+2124;font-family: Roboto,Helvetica,Arial,sans-serif;font-size: 14px; font-w=
+eight: 400; line-height: 20px;color: #70757a;margin-top: 8px; table-layout:=
+ fixed;"><tr><td><div role=3D"radio" aria-checked=3D"false" aria-label=3D"L=
+as listas que contienen las coordenadas de los puntos a graficar tienen dis=
+tinta longitud" style=3D"border: solid 2px #9aa0a6; height: 16px; width: 16=
+px; border-radius: 50%;"></div></td><td style=3D"min-width: 8px;"></td><td =
+style=3D"word-break: break-word;">Las listas que contienen las coordenadas =
+de los puntos a graficar tienen distinta longitud</td></tr></table></div><d=
+iv style=3D"margin-top: 16px;"><table style=3D"color: #202124;font-family: =
+Roboto,Helvetica,Arial,sans-serif;font-size: 14px; font-weight: 400; line-h=
+eight: 20px;color: #70757a;margin-top: 8px; table-layout: fixed;"><tr><td><=
+div role=3D"radio" aria-checked=3D"false" aria-label=3D"Las listas que cont=
+ienen las coordenadas de los puntos a graficar tienen distintos tipos de da=
+tos (int/float/string/etc...)" style=3D"border: solid 2px #9aa0a6; height: =
+16px; width: 16px; border-radius: 50%;"></div></td><td style=3D"min-width: =
+8px;"></td><td style=3D"word-break: break-word;">Las listas que contienen l=
+as coordenadas de los puntos a graficar tienen distintos tipos de datos (in=
+t/float/string/etc...)</td></tr></table></div><div style=3D"margin-top: 16p=
+x;"><table style=3D"color: #202124;font-family: Roboto,Helvetica,Arial,sans=
+-serif;font-size: 14px; font-weight: 400; line-height: 20px;color: #70757a;=
+margin-top: 8px; table-layout: fixed;"><tr><td><div role=3D"radio" aria-che=
+cked=3D"false" aria-label=3D"El par=C3=A1metro de plt.plot que configura el=
+ color y tipo de l=C3=ADnea no tiene el formato correcto" style=3D"border: =
+solid 2px #9aa0a6; height: 16px; width: 16px; border-radius: 50%;"></div></=
+td><td style=3D"min-width: 8px;"></td><td style=3D"word-break: break-word;"=
+>El par=C3=A1metro de plt.plot que configura el color y tipo de l=C3=ADnea =
+no tiene el formato correcto</td></tr></table></div><div style=3D"margin-to=
+p: 16px;"><table style=3D"color: #202124;font-family: Roboto,Helvetica,Aria=
+l,sans-serif;font-size: 14px; font-weight: 400; line-height: 20px;color: #7=
+0757a;margin-top: 8px; table-layout: fixed;"><tr><td><div role=3D"radio" ar=
+ia-checked=3D"false" aria-label=3D"El par=C3=A1metro de plt.plot que config=
+ura la leyenda del gr=C3=A1fico no tiene el formato correcto" style=3D"bord=
+er: solid 2px #9aa0a6; height: 16px; width: 16px; border-radius: 50%;"></di=
+v></td><td style=3D"min-width: 8px;"></td><td style=3D"word-break: break-wo=
+rd;">El par=C3=A1metro de plt.plot que configura la leyenda del gr=C3=A1fic=
+o no tiene el formato correcto</td></tr></table></div><div style=3D"margin-=
+top: 16px;"><table style=3D"color: #202124;font-family: Roboto,Helvetica,Ar=
+ial,sans-serif;font-size: 14px; font-weight: 400; line-height: 20px;margin-=
+top: 8px; table-layout: fixed;"><tr><td><div role=3D"radio" aria-checked=3D=
+"true" aria-label=3D"El orden en el cual se llaman las funciones de matplot=
+lib (plot, legend, show, savefig) no es el correcto" style=3D"border: solid=
+ 2px #5f6368; height: 16px; width: 16px; border-radius: 50%;"><div style=3D=
+"background-color: #5f6368; border: solid 5px #5f6368; border-radius: 50%; =
+margin: 3px; height: 0; width: 0;"></div></div></td><td style=3D"min-width:=
+ 8px;"></td><td style=3D"word-break: break-word;">El orden en el cual se ll=
+aman las funciones de matplotlib (plot, legend, show, savefig) no es el cor=
+recto</td></tr></table></div></div></div><div style=3D"border: 1px solid #d=
+adce0; padding: 20px 12px;background-color: #fff; border-radius: 8px; margi=
+n-bottom: 12px;margin-bottom: 12px;"><div style=3D"padding: 0 12px;"><h2 di=
+r=3D"auto" style=3D"color: #202124;font-family: Roboto,Helvetica,Arial,sans=
+-serif;font-size: 16px; font-weight: 400; line-height: 24px;white-space: pr=
+e-wrap;margin: 0 0 16px;">Un grupo de investigaci=C3=B3n est=C3=A1 utilizan=
+do un instrumento de medici=C3=B3n para obtener datos de uno de los circuit=
+os electr=C3=B3nicos con los que trabajan. Los datos fueron exportados a un=
+ archivo y se quiere usar este simple c=C3=B3digo para visualizar los resul=
+tados =C2=BFCu=C3=A1l de los siguientes gr=C3=A1ficos fue generado usando e=
+ste programa?<span style=3D"color: #d93025;" aria-label=3D"Required questio=
+n"> *</span></h2><img style=3D"border: none; max-height: 100%; max-width: 1=
+00%;" title=3D"" src=3D"https://lh5.googleusercontent.com/nj2nmsCz4lnuvXNw7=
+EBKN0L0C9RhADvip5mvx3CxgDodI9ltW-VclvuICxNIX_0vtRZXLFIr2YLJCA9a_EfDff5coyPS=
+MIhE6yCdRqJoFkVFeY_RyArZMxqMKr0p3Rd3pQ=3Dw600" alt=3D"Captionless Image"></=
+div><div style=3D"padding: 0 12px;"><div style=3D"box-sizing: border-box; d=
+isplay: inline-block; max-width: 100%; padding: 8px; vertical-align: top; w=
+idth: 282px;"><div style=3D"border-radius: 4px; border: solid 2px #f5f5f5; =
+box-sizing: border-box; height: 211px; max-height: 100%; max-width: 100%; w=
+idth: 266px;"><table style=3D"border-collapse: collapse;"><tr><td style=3D"=
+box-sizing: border-box; height: 207px; max-height: 100%; max-width: 100%; p=
+adding: 6px; text-align: center; width: 262px;"><img style=3D"border: none;=
+ max-height: 100%; max-width: 100%;" title=3D"https://imgur.com/a/EONMJ6S" =
+src=3D"https://lh3.googleusercontent.com/r1Q9_qbVwSU632N8bRcteQPGQMsdUbquEh=
+aJ0JChvQlhzhp59ouyvxkP6nyqQEvg1PZx2jAab5ULdTmDOFZsgvP7h_Xcl1X5dED13dPT5ZKnh=
+W-bQljkNRsejA2mtXZB7g=3Dw260" alt=3D"https://imgur.com/a/EONMJ6S"></td></tr=
+></table></div><table style=3D"color: #202124;font-family: Roboto,Helvetica=
+,Arial,sans-serif;font-size: 14px; font-weight: 400; line-height: 20px;colo=
+r: #70757a;margin-top: 8px; table-layout: fixed;"><tr><td><div role=3D"radi=
+o" aria-checked=3D"false" aria-label=3D"https://imgur.com/a/EONMJ6S" style=
+=3D"border: solid 2px #9aa0a6; height: 16px; width: 16px; border-radius: 50=
+%;"></div></td><td style=3D"min-width: 8px;"></td><td style=3D"word-break: =
+break-word;">https://imgur.com/a/EONMJ6S</td></tr></table></div><div style=
+=3D"box-sizing: border-box; display: inline-block; max-width: 100%; padding=
+: 8px; vertical-align: top; width: 282px;"><div style=3D"border-radius: 4px=
+; border: solid 2px #f5f5f5; box-sizing: border-box; height: 211px; max-hei=
+ght: 100%; max-width: 100%; width: 266px;"><table style=3D"border-collapse:=
+ collapse;"><tr><td style=3D"box-sizing: border-box; height: 207px; max-hei=
+ght: 100%; max-width: 100%; padding: 6px; text-align: center; width: 262px;=
+"><img style=3D"border: none; max-height: 100%; max-width: 100%;" title=3D"=
+https://imgur.com/a/b5zt6Sp" src=3D"https://lh4.googleusercontent.com/KR1ef=
+tDFr4sY2mextfwnFCQSqMAmlTpo-2t3kilPc7DZ3ggdK28bG_sYYZP-4OsmFUx-jvYDtCYJMxkD=
+A5Hbr-igfb9mgHb7Msdwo-1KeRuPvVvy64fD93_yuGJmYGwBVA=3Dw260" alt=3D"https://i=
+mgur.com/a/b5zt6Sp"></td></tr></table></div><table style=3D"color: #202124;=
+font-family: Roboto,Helvetica,Arial,sans-serif;font-size: 14px; font-weight=
+: 400; line-height: 20px;color: #70757a;margin-top: 8px; table-layout: fixe=
+d;"><tr><td><div role=3D"radio" aria-checked=3D"false" aria-label=3D"https:=
+//imgur.com/a/b5zt6Sp" style=3D"border: solid 2px #9aa0a6; height: 16px; wi=
+dth: 16px; border-radius: 50%;"></div></td><td style=3D"min-width: 8px;"></=
+td><td style=3D"word-break: break-word;">https://imgur.com/a/b5zt6Sp</td></=
+tr></table></div><div style=3D"box-sizing: border-box; display: inline-bloc=
+k; max-width: 100%; padding: 8px; vertical-align: top; width: 282px;"><div =
+style=3D"border-radius: 4px; border: solid 2px #f5f5f5; box-sizing: border-=
+box; height: 211px; max-height: 100%; max-width: 100%; width: 266px;"><tabl=
+e style=3D"border-collapse: collapse;"><tr><td style=3D"box-sizing: border-=
+box; height: 207px; max-height: 100%; max-width: 100%; padding: 6px; text-a=
+lign: center; width: 262px;"><img style=3D"border: none; max-height: 100%; =
+max-width: 100%;" title=3D"https://imgur.com/a/JYzPcYQ" src=3D"https://lh4.=
+googleusercontent.com/kWNVfjXmd04Fcbdq6fAYrmgjP-SsSDtb46DkwKaXk0561kAieCzPS=
+9Bbtc9f8PxnaAj1T6E68RMrf2It-BGZvk8VQoh8UXjENw0TLrReo_HCGryy0ynAoIMUwJo5MYnZ=
+OA=3Dw260" alt=3D"https://imgur.com/a/JYzPcYQ"></td></tr></table></div><tab=
+le style=3D"color: #202124;font-family: Roboto,Helvetica,Arial,sans-serif;f=
+ont-size: 14px; font-weight: 400; line-height: 20px;color: #70757a;margin-t=
+op: 8px; table-layout: fixed;"><tr><td><div role=3D"radio" aria-checked=3D"=
+false" aria-label=3D"https://imgur.com/a/JYzPcYQ" style=3D"border: solid 2p=
+x #9aa0a6; height: 16px; width: 16px; border-radius: 50%;"></div></td><td s=
+tyle=3D"min-width: 8px;"></td><td style=3D"word-break: break-word;">https:/=
+/imgur.com/a/JYzPcYQ</td></tr></table></div><div style=3D"box-sizing: borde=
+r-box; display: inline-block; max-width: 100%; padding: 8px; vertical-align=
+: top; width: 282px;"><div style=3D"border-radius: 4px; border: solid 2px #=
+f5f5f5; box-sizing: border-box; height: 211px; max-height: 100%; max-width:=
+ 100%; width: 266px;"><table style=3D"border-collapse: collapse;"><tr><td s=
+tyle=3D"box-sizing: border-box; height: 207px; max-height: 100%; max-width:=
+ 100%; padding: 6px; text-align: center; width: 262px;"><img style=3D"borde=
+r: none; max-height: 100%; max-width: 100%;" title=3D"https://imgur.com/a/A=
+nDsxfR" src=3D"https://lh3.googleusercontent.com/f0u3On7js3cMOZwGTM5tXkTGEL=
+YxY_LSxs_YhLY4WGevid-OEx4Ra_au_m25-mtQ2FvVJ10ILd9j1lpLaTd6KBY9V0YRltJClDien=
+1kG48QxUJ3-yJSwfr9ClhBwqIyUEw=3Dw260" alt=3D"https://imgur.com/a/AnDsxfR"><=
+/td></tr></table></div><table style=3D"color: #202124;font-family: Roboto,H=
+elvetica,Arial,sans-serif;font-size: 14px; font-weight: 400; line-height: 2=
+0px;color: #70757a;margin-top: 8px; table-layout: fixed;"><tr><td><div role=
+=3D"radio" aria-checked=3D"false" aria-label=3D"https://imgur.com/a/AnDsxfR=
+" style=3D"border: solid 2px #9aa0a6; height: 16px; width: 16px; border-rad=
+ius: 50%;"></div></td><td style=3D"min-width: 8px;"></td><td style=3D"word-=
+break: break-word;">https://imgur.com/a/AnDsxfR</td></tr></table></div><div=
+ style=3D"box-sizing: border-box; display: inline-block; max-width: 100%; p=
+adding: 8px; vertical-align: top; width: 282px;"><div style=3D"border-radiu=
+s: 4px; border: solid 2px rgb(103,58,183); box-sizing: border-box; height: =
+211px; max-height: 100%; max-width: 100%; width: 266px;"><table style=3D"bo=
+rder-collapse: collapse;"><tr><td style=3D"box-sizing: border-box; height: =
+207px; max-height: 100%; max-width: 100%; padding: 6px; text-align: center;=
+ width: 262px;"><img style=3D"border: none; max-height: 100%; max-width: 10=
+0%;" title=3D"https://imgur.com/a/pMBCcjV" src=3D"https://lh3.googleusercon=
+tent.com/z4f-1HmEbAEeG7JBJbJZFDtpHXxTl020Ro4oTiTQGja1zER4jholEOJ0qDL6Zuof9j=
+0GC3Yf8vQTTk7KmXY40FuRjB-hEbWWWO8FoQnGqGboiSTyiQWS3WvKZmNRY162HA=3Dw260" al=
+t=3D"https://imgur.com/a/pMBCcjV"></td></tr></table></div><table style=3D"c=
+olor: #202124;font-family: Roboto,Helvetica,Arial,sans-serif;font-size: 14p=
+x; font-weight: 400; line-height: 20px;margin-top: 8px; table-layout: fixed=
+;"><tr><td><div role=3D"radio" aria-checked=3D"true" aria-label=3D"https://=
+imgur.com/a/pMBCcjV" style=3D"border: solid 2px #5f6368; height: 16px; widt=
+h: 16px; border-radius: 50%;"><div style=3D"background-color: #5f6368; bord=
+er: solid 5px #5f6368; border-radius: 50%; margin: 3px; height: 0; width: 0=
+;"></div></div></td><td style=3D"min-width: 8px;"></td><td style=3D"word-br=
+eak: break-word;">https://imgur.com/a/pMBCcjV</td></tr></table></div></div>=
+</div><div style=3D"border: 1px solid #dadce0; padding: 20px 12px;backgroun=
+d-color: #fff; border-radius: 8px; margin-bottom: 12px;margin-bottom: 12px;=
+"><div style=3D"padding: 0 12px;"><h2 dir=3D"auto" style=3D"color: #202124;=
+font-family: Roboto,Helvetica,Arial,sans-serif;font-size: 16px; font-weight=
+: 400; line-height: 24px;white-space: pre-wrap;margin: 0 0 16px;">=C2=BFQu=
+=C3=A9 subplot se est=C3=A1 seleccionando mediante el uso de la instrucci=
+=C3=B3n plt.subplot(2, 2, 3) ?</h2></div><div style=3D"padding: 0 12px;"><d=
+iv style=3D"box-sizing: border-box; display: inline-block; max-width: 100%;=
+ padding: 8px; vertical-align: top; width: 282px;"><div style=3D"border-rad=
+ius: 4px; border: solid 2px #f5f5f5; box-sizing: border-box; height: 211px;=
+ max-height: 100%; max-width: 100%; width: 266px;"><table style=3D"border-c=
+ollapse: collapse;"><tr><td style=3D"box-sizing: border-box; height: 207px;=
+ max-height: 100%; max-width: 100%; padding: 6px; text-align: center; width=
+: 262px;"><img style=3D"border: none; max-height: 100%; max-width: 100%;" t=
+itle=3D"https://imgur.com/a/V9nbtYE" src=3D"https://lh4.googleusercontent.c=
+om/iY_s1PlaNEDoZJCve1FuKgTqBPY4xY4TqMruFGNIWr0MRevlJBAOvlJucPyyxYHXPQC3NcZM=
+01ZcbknX89_OsXI0pjQdwdo2UShCDGzTgBOwvrOIMkpPtaefHVALpwsqrw=3Dw260" alt=3D"h=
+ttps://imgur.com/a/V9nbtYE"></td></tr></table></div><table style=3D"color: =
+#202124;font-family: Roboto,Helvetica,Arial,sans-serif;font-size: 14px; fon=
+t-weight: 400; line-height: 20px;color: #70757a;margin-top: 8px; table-layo=
+ut: fixed;"><tr><td><div role=3D"radio" aria-checked=3D"false" aria-label=
+=3D"https://imgur.com/a/V9nbtYE" style=3D"border: solid 2px #9aa0a6; height=
+: 16px; width: 16px; border-radius: 50%;"></div></td><td style=3D"min-width=
+: 8px;"></td><td style=3D"word-break: break-word;">https://imgur.com/a/V9nb=
+tYE</td></tr></table></div><div style=3D"box-sizing: border-box; display: i=
+nline-block; max-width: 100%; padding: 8px; vertical-align: top; width: 282=
+px;"><div style=3D"border-radius: 4px; border: solid 2px rgb(103,58,183); b=
+ox-sizing: border-box; height: 211px; max-height: 100%; max-width: 100%; wi=
+dth: 266px;"><table style=3D"border-collapse: collapse;"><tr><td style=3D"b=
+ox-sizing: border-box; height: 207px; max-height: 100%; max-width: 100%; pa=
+dding: 6px; text-align: center; width: 262px;"><img style=3D"border: none; =
+max-height: 100%; max-width: 100%;" title=3D"https://imgur.com/a/NsdNgCI" s=
+rc=3D"https://lh5.googleusercontent.com/a9RSYPVQBg8E5XQCQIK7IQrNfvTJGZd0IIL=
+KS0_fU4J-lEAkGy4tPmEKGL2677Mnrx91ygSBti3RKGXE5Q83XlPs0-9czUiQ_yhQfie9oEcNOc=
+hdTrAty33tTbPMvYE5XA=3Dw260" alt=3D"https://imgur.com/a/NsdNgCI"></td></tr>=
+</table></div><table style=3D"color: #202124;font-family: Roboto,Helvetica,=
+Arial,sans-serif;font-size: 14px; font-weight: 400; line-height: 20px;margi=
+n-top: 8px; table-layout: fixed;"><tr><td><div role=3D"radio" aria-checked=
+=3D"true" aria-label=3D"https://imgur.com/a/NsdNgCI" style=3D"border: solid=
+ 2px #5f6368; height: 16px; width: 16px; border-radius: 50%;"><div style=3D=
+"background-color: #5f6368; border: solid 5px #5f6368; border-radius: 50%; =
+margin: 3px; height: 0; width: 0;"></div></div></td><td style=3D"min-width:=
+ 8px;"></td><td style=3D"word-break: break-word;">https://imgur.com/a/NsdNg=
+CI</td></tr></table></div><div style=3D"box-sizing: border-box; display: in=
+line-block; max-width: 100%; padding: 8px; vertical-align: top; width: 282p=
+x;"><div style=3D"border-radius: 4px; border: solid 2px #f5f5f5; box-sizing=
+: border-box; height: 211px; max-height: 100%; max-width: 100%; width: 266p=
+x;"><table style=3D"border-collapse: collapse;"><tr><td style=3D"box-sizing=
+: border-box; height: 207px; max-height: 100%; max-width: 100%; padding: 6p=
+x; text-align: center; width: 262px;"><img style=3D"border: none; max-heigh=
+t: 100%; max-width: 100%;" title=3D"https://imgur.com/a/ULGgP1l" src=3D"htt=
+ps://lh5.googleusercontent.com/dgbTJlHKU0KawMo3oM8LEqrgLdOblw4Qi-7-KiSPCCN8=
+SqtIPDILDYrSo1Dy0KltRZTrR7A62-W5-uCvB63Wu5EmDwTa_mq2oDk-haMYbQkWWfc4-kOYDtM=
+qH4d8zGrWZg=3Dw260" alt=3D"https://imgur.com/a/ULGgP1l"></td></tr></table><=
+/div><table style=3D"color: #202124;font-family: Roboto,Helvetica,Arial,san=
+s-serif;font-size: 14px; font-weight: 400; line-height: 20px;color: #70757a=
+;margin-top: 8px; table-layout: fixed;"><tr><td><div role=3D"radio" aria-ch=
+ecked=3D"false" aria-label=3D"https://imgur.com/a/ULGgP1l" style=3D"border:=
+ solid 2px #9aa0a6; height: 16px; width: 16px; border-radius: 50%;"></div><=
+/td><td style=3D"min-width: 8px;"></td><td style=3D"word-break: break-word;=
+">https://imgur.com/a/ULGgP1l</td></tr></table></div><div style=3D"box-sizi=
+ng: border-box; display: inline-block; max-width: 100%; padding: 8px; verti=
+cal-align: top; width: 282px;"><div style=3D"border-radius: 4px; border: so=
+lid 2px #f5f5f5; box-sizing: border-box; height: 211px; max-height: 100%; m=
+ax-width: 100%; width: 266px;"><table style=3D"border-collapse: collapse;">=
+<tr><td style=3D"box-sizing: border-box; height: 207px; max-height: 100%; m=
+ax-width: 100%; padding: 6px; text-align: center; width: 262px;"><img style=
+=3D"border: none; max-height: 100%; max-width: 100%;" title=3D"https://imgu=
+r.com/a/qfJ8IRJ" src=3D"https://lh4.googleusercontent.com/24ZSdr-4oXxjvxMtI=
+1CYvUzVk4kxQzWQYTVREMCDwKTIUVbWG2bavkcm9j4TOOAzH8lvlgHqMZNfn7Kh829ThDrN-2tW=
+tEqovKIBqYSIfTebRho0EEMZvWK3Y8Fgo84IMg=3Dw260" alt=3D"https://imgur.com/a/q=
+fJ8IRJ"></td></tr></table></div><table style=3D"color: #202124;font-family:=
+ Roboto,Helvetica,Arial,sans-serif;font-size: 14px; font-weight: 400; line-=
+height: 20px;color: #70757a;margin-top: 8px; table-layout: fixed;"><tr><td>=
+<div role=3D"radio" aria-checked=3D"false" aria-label=3D"https://imgur.com/=
+a/qfJ8IRJ" style=3D"border: solid 2px #9aa0a6; height: 16px; width: 16px; b=
+order-radius: 50%;"></div></td><td style=3D"min-width: 8px;"></td><td style=
+=3D"word-break: break-word;">https://imgur.com/a/qfJ8IRJ</td></tr></table><=
+/div></div></div></div><table align=3D"center" cellpadding=3D"0" cellspacin=
+g=3D"0" style=3D"max-width: 672px; min-width: 154px; border-collapse: separ=
+ate; border-spacing: 0 0.2em;" width=3D"100%" role=3D"presentation"><tbody>=
+<tr height=3D"24px"><td></td></tr><tr><td><a href=3D"https://docs.google.co=
+m/forms?usp=3Dmail_form_link" style=3D"color: #424242; font-size: 13px;">Cr=
+eate your own Google Form</a></td></tr><tr><td><a href=3D"https://docs.goog=
+le.com/forms/u/0/d/e/1FAIpQLSdjgM1_R5uw3VDQOqkTH6NGMydsT7e-PrxINGH2flq63WI3=
+4w/reportabuse?source=3Dhttps://docs.google.com/forms/d/e/1FAIpQLSdjgM1_R5u=
+w3VDQOqkTH6NGMydsT7e-PrxINGH2flq63WI34w/viewform&amp;usp=3Dmail_receipt_abu=
+se" target=3D"_blank" style=3D"color: #424242; font-size: 13px;">Report Abu=
+se</a></td></tr></tbody></table></div></body></html>
+--000000000000a9da6905ea7e41fb--
