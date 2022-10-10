@@ -64,6 +64,10 @@ plt.show()
 # ¿Qué hace plt.show()?
 # Muestra el gráfico
 
+# OSError: [Errno 22] Invalid argument: 'CLASE_2\notas.xlsx'
+# ¿Qué significa este error?
+# Que el archivo notas.xlsx no se encuentra en la carpeta CLASE_2
+
 
 
 
